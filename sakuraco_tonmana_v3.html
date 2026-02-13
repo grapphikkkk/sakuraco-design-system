@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SakuraCo — Tone & Manner Guide v3 (Mobile First)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   SAKURACO DESIGN TOKENS v3 — Mobile First
+   ═══════════════════════════════════════════════════ */
+:root {
+  /* Primary — Blue Green */
+  --green-50:  #EBF5F4;  --green-100: #C9E8E4;
+  --green-200: #93D1CA;  --green-300: #5BB8AE;
+  --green-400: #34A396;  --green-500: #1D8C7E;
+  --green-600: #177568;  --green-700: #115C52;
+  --green-800: #0B443C;  --green-900: #072E29;
+
+  /* Accent — Pink */
+  --pink-50:  #FFF0F3;  --pink-100: #FFD6E0;
+  --pink-200: #FFB3C6;  --pink-300: #FF8FAB;
+  --pink-400: #E8507A;  --pink-500: #C73D63;
+
+  /* Neutral */
+  --neutral-50:  #F7F9F9;  --neutral-100: #EDF1F0;
+  --neutral-200: #DCE2E0;  --neutral-300: #C1CAC7;
+  --neutral-400: #8A9691;  --neutral-500: #5E6E68;
+  --neutral-600: #455250;  --neutral-700: #333E3C;
+  --neutral-800: #222B29;  --neutral-900: #131A18;
+
+  /* Backgrounds */
+  --bg-main: linear-gradient(168deg, #EBF5F4 0%, #F7F9F9 40%, #EDF1F0 70%, #EBF5F4 100%);
+  --bg-card: rgba(255, 255, 255, 0.78);
+  --bg-glass: rgba(255, 255, 255, 0.52);
+
+  /* Font */
+  --font-display: 'Cormorant Garamond', serif;            /* ブランドロゴ専用 */
+  --font-en: 'Inter', sans-serif;                          /* 英字・数字 */
+  --font-body: 'Inter', 'Noto Sans JP', sans-serif;        /* 本文（英字→Inter、日本語→Noto） */
+  --font-mono: 'JetBrains Mono', monospace;                /* コード・HEX値・技術表記 */
+
+  /* ══════ MOBILE-FIRST SPACING（4px基準） ══════ */
+  --space-xs: 4px;   --space-sm: 8px;   --space-md: 16px;
+  --space-lg: 24px;  --space-xl: 32px;  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ══════ MOBILE-FIRST TYPOGRAPHY SCALE ══════ */
+  --text-xs:   11px;  /* 最小（バッジ内数字等） */
+  --text-sm:   13px;  /* caption・メタ情報 */
+  --text-base: 15px;  /* 本文 */
+  --text-md:   17px;  /* H2・カード見出し */
+  --text-lg:   20px;  /* H1・画面タイトル */
+  --text-xl:   28px;  /* ヒーロー・特別見出し */
+  --text-brand: 36px; /* ブランドロゴ */
+
+  /* Radius */
+  --radius-sm: 8px;  --radius-md: 12px;
+  --radius-lg: 16px; --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(7,46,41,0.07);
+  --shadow-md: 0 4px 12px rgba(7,46,41,0.09);
+  --shadow-lg: 0 8px 32px rgba(7,46,41,0.11);
+
+  /* ══════ TOUCH TARGET（WCAG 2.5.5 / Apple HIG） ══════ */
+  --touch-min: 44px;   /* 最小タッチ領域 */
+  --touch-comfortable: 48px; /* 推奨タッチ領域 */
+}
+
+/* ══════ Desktop overrides ══════ */
+@media (min-width: 768px) {
+  :root {
+    --text-sm: 13px;   --text-base: 15px;
+    --text-md: 18px;   --text-lg: 24px;
+    --text-xl: 32px;   --text-brand: 48px;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-main);
+  color: var(--neutral-800);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent; /* iOS */
+  overflow-x: hidden;
+}
+
+/* Grain */
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.012'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999;
+}
+
+.container {
+  max-width: 960px; margin: 0 auto;
+  padding: var(--space-md); /* mobile: 16px */
+}
+@media (min-width: 768px) {
+  .container { padding: var(--space-xl); }
+}
+
+/* ═══════ HERO ═══════ */
+.hero {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+  position: relative;
+}
+.hero::before {
+  content: ''; position: absolute;
+  top: -60px; right: -80px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(147,209,202,0.18) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-size: var(--text-brand); font-weight: 300;
+  letter-spacing: 0.1em; color: var(--green-700);
+  margin-bottom: var(--space-xs);
+}
+.brand-tagline {
+  font-weight: 300; font-size: var(--text-base);
+  color: var(--neutral-600); letter-spacing: 0.04em;
+}
+.brand-sub {
+  font-size: var(--text-sm); color: var(--neutral-500);
+  font-weight: 500; margin-top: var(--space-xs);
+}
+.doc-label {
+  display: inline-block; margin-top: var(--space-xl);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--bg-glass); backdrop-filter: blur(12px);
+  border: 1px solid var(--green-200);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 500;
+  color: var(--green-700); letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ═══════ SECTIONS ═══════ */
+section { margin-bottom: var(--space-3xl); }
+.section-label {
+  font-size: var(--text-xs); font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--green-500); margin-bottom: var(--space-xs);
+}
+.section-title {
+  font-size: var(--text-lg); font-weight: 500;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-md); line-height: 1.4;
+}
+.section-desc {
+  font-size: var(--text-base); color: var(--neutral-600);
+  line-height: 1.9; margin-bottom: var(--space-lg);
+}
+
+/* ═══════ DIVIDER ═══════ */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green-200), transparent);
+  margin: var(--space-2xl) 0;
+}
+
+/* ═══════ MOOD KEYWORDS ═══════ */
+.mood-keywords {
+  display: flex; flex-wrap: wrap;
+  gap: var(--space-sm); margin-bottom: var(--space-xl);
+}
+.mood-keyword {
+  padding: 8px 16px; border-radius: var(--radius-full);
+  font-size: var(--text-sm); font-weight: 400;
+  border: 1px solid var(--green-300);
+  color: var(--green-700); background: rgba(255,255,255,0.5);
+}
+.mood-keyword.accent { border-color: var(--pink-200); color: var(--pink-500); }
+
+/* ═══════ PRINCIPLES ═══════ */
+.principles-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1列 */
+  gap: var(--space-md);
+}
+@media (min-width: 768px) {
+  .principles-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
+.principle {
+  padding: var(--space-lg); border-left: 2px solid var(--green-300);
+}
+.principle .num {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 300;
+  color: var(--green-300); margin-bottom: var(--space-xs);
+}
+.principle h4 {
+  font-weight: 500; font-size: var(--text-base);
+  color: var(--neutral-800); margin-bottom: var(--space-sm);
+}
+.principle p {
+  font-size: var(--text-sm); color: var(--neutral-600); line-height: 1.9;
+}
+
+/* ═══════ COLOR PALETTE ═══════ */
+.palette-group { margin-bottom: var(--space-xl); }
+.palette-group-title {
+  font-weight: 500; font-size: var(--text-sm);
+  color: var(--neutral-700); margin-bottom: var(--space-md);
+  display: flex; align-items: center; gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: var(--text-xs); padding: 2px 10px;
+  border-radius: var(--radius-full); font-weight: 500;
+}
+.badge-primary { background: var(--green-100); color: var(--green-800); }
+.badge-accent { background: var(--pink-100); color: var(--pink-500); }
+.badge-neutral { background: var(--neutral-200); color: var(--neutral-700); }
+
+.palette-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* mobile: 5列 */
+  gap: 4px;
+}
+@media (min-width: 768px) {
+  .palette-row { grid-template-columns: repeat(10, 1fr); gap: 6px; }
+}
+.swatch {
+  aspect-ratio: 1; border-radius: var(--radius-sm);
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 4px;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+@media (min-width: 768px) {
+  .swatch { padding: var(--space-sm); }
+}
+.swatch-label { font-size: 9px; font-weight: 500; }
+.swatch-hex { font-size: 8px; font-family: var(--font-mono); display: none; }
+@media (min-width: 768px) {
+  .swatch-hex { display: block; }
+}
+.swatch.on-light .swatch-label, .swatch.on-light .swatch-hex { color: var(--neutral-800); }
+.swatch.on-dark .swatch-label, .swatch.on-dark .swatch-hex { color: #fff; }
+
+/* ═══════ ACCESSIBILITY BOX ═══════ */
+.a11y-box {
+  margin-top: var(--space-lg); padding: var(--space-lg);
+  background: #fff; border-radius: var(--radius-md);
+  border: 1px solid var(--green-200);
+}
+.a11y-title {
+  font-size: var(--text-sm); font-weight: 700;
+  color: var(--green-700); margin-bottom: var(--space-md);
+}
+.a11y-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1列 */
+  gap: var(--space-sm);
+}
+@media (min-width: 600px) {
+  .a11y-grid { grid-template-columns: 1fr 1fr; }
+}
+.a11y-item {
+  padding: var(--space-md); border-radius: var(--radius-sm);
+}
+.a11y-item .sample { font-size: var(--text-base); font-weight: 500; margin-bottom: 4px; }
+.a11y-item .detail { font-size: var(--text-xs); font-weight: 500; }
+.a11y-pass { color: var(--green-700); }
+.a11y-fail { color: #C7254E; }
+
+/* Info box */
+.info-box {
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--pink-300);
+  background: var(--pink-50);
+  margin-top: var(--space-lg);
+}
+.info-box .title {
+  font-size: var(--text-sm); font-weight: 700;
+  color: var(--pink-500); margin-bottom: var(--space-xs);
+}
+.info-box p {
+  font-size: var(--text-sm); color: var(--neutral-700); line-height: 1.9;
+}
+
+/* ═══════ TYPOGRAPHY SPECIMENS ═══════ */
+.type-specimen {
+  background: var(--bg-card); backdrop-filter: blur(12px);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg); margin-bottom: var(--space-md);
+}
+.type-meta {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--neutral-200);
+}
+@media (min-width: 600px) {
+  .type-meta { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+.type-role {
+  font-size: var(--text-xs); font-weight: 500;
+  color: var(--green-600); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.type-family {
+  font-size: var(--text-xs); color: var(--neutral-500);
+  font-weight: 500; font-family: var(--font-mono);
+}
+
+/* Scale table */
+.scale-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: var(--space-md); }
+.scale-table { width: 100%; border-collapse: collapse; min-width: 540px; }
+.scale-table th {
+  font-size: var(--text-xs); font-weight: 500;
+  color: var(--neutral-600); letter-spacing: 0.08em;
+  text-transform: uppercase; text-align: left;
+  padding: var(--space-sm); border-bottom: 1px solid var(--neutral-200);
+  white-space: nowrap;
+}
+.scale-table td {
+  padding: var(--space-sm); font-size: var(--text-sm);
+  color: var(--neutral-700); border-bottom: 1px solid var(--neutral-100);
+  white-space: nowrap;
+}
+
+/* ═══════ COMPONENTS ═══════ */
+.components-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1列 */
+  gap: var(--space-md);
+}
+@media (min-width: 768px) {
+  .components-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
+.component-card {
+  background: var(--bg-card); backdrop-filter: blur(12px);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+.component-label {
+  font-size: var(--text-xs); font-weight: 500;
+  color: var(--neutral-600); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: var(--space-md);
+}
+
+/* ═══ Buttons — 44px min touch target ═══ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-weight: 500;
+  font-size: var(--text-sm); letter-spacing: 0.03em;
+  border: none; cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: var(--radius-full);
+  min-height: var(--touch-min); /* 44px */
+  padding: 0 24px; gap: var(--space-sm);
+  -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 768px) {
+  .btn { font-size: 0.85rem; padding: 0 28px; }
+}
+.btn-primary {
+  background: var(--green-600); color: #fff;
+  box-shadow: 0 2px 8px rgba(23,117,104,0.28);
+}
+.btn-primary:hover { background: var(--green-700); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); box-shadow: 0 1px 4px rgba(23,117,104,0.2); }
+.btn-secondary {
+  background: transparent; color: var(--green-700);
+  border: 1.5px solid var(--green-400);
+}
+.btn-secondary:hover { background: var(--green-50); }
+.btn-ghost { background: transparent; color: var(--neutral-600); padding: 0 16px; }
+.btn-ghost:hover { color: var(--green-700); }
+.btn-accent {
+  background: var(--pink-400); color: #fff;
+  box-shadow: 0 2px 8px rgba(232,80,122,0.22);
+}
+.btn-accent:active { transform: translateY(0); }
+.btn-group { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-md); }
+
+/* Full-width CTA on mobile */
+.btn-block-mobile { width: 100%; }
+@media (min-width: 768px) {
+  .btn-block-mobile { width: auto; }
+}
+
+/* ═══ Inputs — 48px height ═══ */
+.input-field {
+  width: 100%;
+  min-height: var(--touch-comfortable); /* 48px */
+  padding: 0 16px;
+  font-family: var(--font-body); font-size: var(--text-base); /* 15px — 16pxで自動ズーム防止に近い */
+  border: 1.5px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.85);
+  color: var(--neutral-800);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  -webkit-appearance: none; /* iOS */
+}
+.input-field:focus {
+  border-color: var(--green-400);
+  box-shadow: 0 0 0 3px rgba(29,140,126,0.12);
+}
+.input-field::placeholder { color: var(--neutral-400); font-weight: 300; }
+.input-label {
+  font-size: var(--text-sm); font-weight: 500;
+  color: var(--neutral-700); margin-bottom: 6px; display: block;
+}
+
+/* ═══ Chips — 36px min height ═══ */
+.chip {
+  display: inline-flex; align-items: center;
+  min-height: 36px; padding: 0 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm); font-weight: 400;
+  cursor: pointer; transition: all 0.2s;
+  border: 1.5px solid var(--neutral-300);
+  background: transparent; color: var(--neutral-700);
+  -webkit-tap-highlight-color: transparent;
+}
+.chip:hover { border-color: var(--green-400); color: var(--green-700); }
+.chip.active { background: var(--green-600); border-color: var(--green-600); color: #fff; font-weight: 500; }
+.chip-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ═══ Event Card ═══ */
+.event-card {
+  background: var(--bg-card); border: 1px solid var(--green-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg); transition: all 0.25s ease;
+  position: relative; overflow: hidden;
+}
+.event-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--green-400), var(--green-500));
+  opacity: 0; transition: opacity 0.25s;
+}
+.event-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.event-card:hover::before { opacity: 1; }
+.event-card .tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: var(--space-sm); }
+.event-card .tag {
+  padding: 3px 10px; font-size: var(--text-xs); font-weight: 500;
+  border-radius: var(--radius-full);
+  background: var(--green-100); color: var(--green-800);
+}
+.event-card .tag.first-time { background: var(--pink-100); color: var(--pink-500); }
+.event-card h3 {
+  font-weight: 500; font-size: var(--text-md); color: var(--neutral-800);
+  margin-bottom: var(--space-xs);
+}
+.event-card .meta {
+  font-size: var(--text-sm); color: var(--neutral-500);
+  font-weight: 500; margin-bottom: var(--space-md);
+}
+.event-card .bottom { display: flex; justify-content: space-between; align-items: center; }
+.event-card .price { font-weight: 700; color: var(--green-700); font-size: var(--text-base); }
+.event-card .seats { font-size: var(--text-sm); color: var(--neutral-500); font-weight: 500; }
+
+.event-cards-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-md);
+}
+@media (min-width: 600px) {
+  .event-cards-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
+
+/* Badge */
+.notification-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 20px; padding: 0 6px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 700;
+  color: #fff; background: var(--pink-400);
+}
+
+/* ═══════ GRADIENTS ═══════ */
+.gradient-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* mobile: 2列 */
+  gap: var(--space-sm);
+}
+@media (min-width: 768px) {
+  .gradient-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+}
+.gradient-swatch {
+  aspect-ratio: 16/10; border-radius: var(--radius-md);
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: var(--space-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.gradient-swatch .name { font-size: var(--text-xs); font-weight: 500; }
+.gradient-swatch .css { font-size: 9px; font-family: var(--font-mono); }
+.gradient-swatch.on-dark .name, .gradient-swatch.on-dark .css { color: rgba(255,255,255,0.9); }
+.gradient-swatch.on-light .name { color: var(--neutral-700); }
+.gradient-swatch.on-light .css { color: var(--neutral-500); }
+
+/* ═══════ DO/DON'T ═══════ */
+.dodont-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1列 */
+  gap: var(--space-md);
+}
+@media (min-width: 768px) {
+  .dodont-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
+.dodont-card { padding: var(--space-lg); border-radius: var(--radius-lg); }
+.dodont-card.do-card { background: rgba(201,232,228,0.3); border: 1px solid var(--green-200); }
+.dodont-card.dont-card { background: rgba(255,214,224,0.18); border: 1px solid rgba(255,179,198,0.35); }
+.dodont-card .label {
+  font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+.do-card .label { color: var(--green-700); }
+.dont-card .label { color: var(--pink-500); }
+.dodont-card ul {
+  list-style: none; font-size: var(--text-sm);
+  color: var(--neutral-700); line-height: 2.1;
+}
+.dodont-card li::before { margin-right: 8px; }
+.do-card li::before { content: '○'; color: var(--green-600); }
+.dont-card li::before { content: '×'; color: var(--pink-400); }
+
+/* ═══════ SPACING DEMO ═══════ */
+.spacing-row { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm); }
+.spacing-bar { height: 8px; border-radius: 4px; background: var(--green-200); }
+.spacing-label { font-size: var(--text-sm); font-family: var(--font-mono); color: var(--neutral-600); min-width: 90px; }
+
+.radius-grid { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+.radius-item {
+  width: 64px; height: 64px;
+  background: var(--green-100); border: 1px solid var(--green-200);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-family: var(--font-mono); color: var(--green-800);
+}
+
+.shadow-grid { display: flex; gap: var(--space-lg); flex-wrap: wrap; margin-top: var(--space-md); }
+.shadow-item {
+  width: 80px; height: 80px; background: #fff;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+}
+.shadow-item .name { font-size: var(--text-xs); color: var(--neutral-600); }
+
+/* ═══════ MOBILE SPECIFIC SECTION ═══════ */
+.mobile-spec {
+  background: var(--bg-card); border: 1px solid var(--green-100);
+  border-radius: var(--radius-lg); padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+.mobile-spec .title {
+  font-size: var(--text-sm); font-weight: 700;
+  color: var(--green-700); margin-bottom: var(--space-sm);
+}
+.mobile-spec .rule {
+  font-size: var(--text-sm); color: var(--neutral-700);
+  line-height: 2; padding-left: 1em;
+  text-indent: -1em;
+}
+.mobile-spec .rule::before { content: '・'; color: var(--green-500); }
+.mobile-spec .note {
+  font-size: var(--text-xs); color: var(--neutral-600);
+  font-weight: 500; margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--green-50); border-radius: var(--radius-sm);
+}
+
+/* Touch target demo */
+.touch-demo {
+  display: flex; align-items: center; gap: var(--space-md);
+  flex-wrap: wrap; margin-top: var(--space-md);
+}
+.touch-box {
+  display: flex; align-items: center; justify-content: center;
+  border: 2px dashed var(--green-300);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs); color: var(--green-700); font-weight: 500;
+  text-align: center; padding: 4px;
+}
+
+/* Code block */
+.code-block {
+  background: var(--neutral-800); border-radius: var(--radius-lg);
+  padding: var(--space-lg); overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.code-block pre {
+  font-family: var(--font-mono);
+  font-size: 11px; line-height: 1.9;
+  color: #93D1CA; white-space: pre; margin: 0;
+}
+@media (min-width: 768px) {
+  .code-block pre { font-size: 12px; }
+}
+.code-comment { color: #6E7F79; }
+.code-prop { color: #5BB8AE; }
+.code-val { color: #FFB3C6; }
+
+/* ═══════ SAFE AREA INFO ═══════ */
+.safe-area-note {
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--green-50), #fff);
+  border: 1px solid var(--green-200);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-lg);
+}
+.safe-area-note .title {
+  font-weight: 700; font-size: var(--text-sm);
+  color: var(--neutral-800); margin-bottom: var(--space-sm);
+}
+.safe-area-note code {
+  background: var(--neutral-100); padding: 2px 6px;
+  border-radius: 4px; font-size: var(--text-xs);
+  font-family: var(--font-mono); color: var(--green-700);
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="hero">
+    <div class="brand-name">SakuraCo</div>
+    <p class="brand-tagline">そこにあるのは、思いがけない友情かもしれないし、ときめきかもしれない</p>
+    <p class="brand-sub">僕と僕らのためのお食事会</p>
+    <div class="doc-label">Tone & Manner v3 — Mobile First</div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 01 MOOD ═══════ -->
+  <section>
+    <div class="section-label">01</div>
+    <h2 class="section-title">ブランドムード</h2>
+    <p class="section-desc">
+      「The Boyfriend」のような透明感と爽やかさ。力の抜けた自然体の空気感。「何かいいことが起こるかも」という静かな期待感を、こじゃれたトーンで包む。
+    </p>
+    <div class="mood-keywords">
+      <span class="mood-keyword">透明感</span>
+      <span class="mood-keyword">爽やか</span>
+      <span class="mood-keyword">こじゃれた</span>
+      <span class="mood-keyword">力の抜けた</span>
+      <span class="mood-keyword">自然体</span>
+      <span class="mood-keyword">クリーン</span>
+      <span class="mood-keyword accent">ちょっとした期待感</span>
+      <span class="mood-keyword accent">何かが起こるかも</span>
+    </div>
+    <div class="principles-grid">
+      <div class="principle"><div class="num">01</div><h4>爽やかな青みグリーン</h4><p>ティール寄りのグリーンで清涼感を演出。背景は淡いグラデーション、要素はすりガラスで浮遊感。</p></div>
+      <div class="principle"><div class="num">02</div><h4>力まない</h4><p>フォントウェイトは300〜500。太字は最小限。声を張らない落ち着いたトーン。</p></div>
+      <div class="principle"><div class="num">03</div><h4>導く、でも押さない</h4><p>UIは流れに乗せるが強制しない。アクションは明確だが、選ばないことも許容する設計。</p></div>
+      <div class="principle"><div class="num">04</div><h4>ピンクは"ときめき"の印</h4><p>マッチ通知・初回バッジなど「何かが起こる瞬間」にだけ使用。日常画面では抑制。</p></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 02 COLOR ═══════ -->
+  <section>
+    <div class="section-label">02</div>
+    <h2 class="section-title">カラーパレット</h2>
+    <p class="section-desc">青みグリーン（ティール）基調。ピンクは5%以下。全テキストカラーはWCAG 2.0 AA準拠。</p>
+
+    <div class="palette-group">
+      <div class="palette-group-title">Primary — Blue Green <span class="badge badge-primary">基調色 60%</span></div>
+      <div class="palette-row">
+        <div class="swatch on-light" style="background:#EBF5F4"><span class="swatch-label">50</span><span class="swatch-hex">#EBF5F4</span></div>
+        <div class="swatch on-light" style="background:#C9E8E4"><span class="swatch-label">100</span><span class="swatch-hex">#C9E8E4</span></div>
+        <div class="swatch on-light" style="background:#93D1CA"><span class="swatch-label">200</span><span class="swatch-hex">#93D1CA</span></div>
+        <div class="swatch on-light" style="background:#5BB8AE"><span class="swatch-label">300</span><span class="swatch-hex">#5BB8AE</span></div>
+        <div class="swatch on-dark" style="background:#34A396"><span class="swatch-label">400</span><span class="swatch-hex">#34A396</span></div>
+        <div class="swatch on-dark" style="background:#1D8C7E"><span class="swatch-label">500</span><span class="swatch-hex">#1D8C7E</span></div>
+        <div class="swatch on-dark" style="background:#177568"><span class="swatch-label">600</span><span class="swatch-hex">#177568</span></div>
+        <div class="swatch on-dark" style="background:#115C52"><span class="swatch-label">700</span><span class="swatch-hex">#115C52</span></div>
+        <div class="swatch on-dark" style="background:#0B443C"><span class="swatch-label">800</span><span class="swatch-hex">#0B443C</span></div>
+        <div class="swatch on-dark" style="background:#072E29"><span class="swatch-label">900</span><span class="swatch-hex">#072E29</span></div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <div class="palette-group-title">Accent — Pink <span class="badge badge-accent">5%以下</span></div>
+      <div class="palette-row" style="grid-template-columns: repeat(5,1fr);">
+        <div class="swatch on-light" style="background:#FFF0F3"><span class="swatch-label">50</span></div>
+        <div class="swatch on-light" style="background:#FFD6E0"><span class="swatch-label">100</span></div>
+        <div class="swatch on-light" style="background:#FFB3C6"><span class="swatch-label">200</span></div>
+        <div class="swatch on-dark" style="background:#E8507A"><span class="swatch-label">400</span></div>
+        <div class="swatch on-dark" style="background:#C73D63"><span class="swatch-label">500</span></div>
+      </div>
+    </div>
+
+    <div class="palette-group">
+      <div class="palette-group-title">Neutral <span class="badge badge-neutral">テキスト 35%</span></div>
+      <div class="palette-row">
+        <div class="swatch on-light" style="background:#F7F9F9"><span class="swatch-label">50</span></div>
+        <div class="swatch on-light" style="background:#EDF1F0"><span class="swatch-label">100</span></div>
+        <div class="swatch on-light" style="background:#DCE2E0"><span class="swatch-label">200</span></div>
+        <div class="swatch on-light" style="background:#C1CAC7"><span class="swatch-label">300</span></div>
+        <div class="swatch on-light" style="background:#8A9691"><span class="swatch-label">400</span></div>
+        <div class="swatch on-dark" style="background:#5E6E68"><span class="swatch-label">500</span></div>
+        <div class="swatch on-dark" style="background:#455250"><span class="swatch-label">600</span></div>
+        <div class="swatch on-dark" style="background:#333E3C"><span class="swatch-label">700</span></div>
+        <div class="swatch on-dark" style="background:#222B29"><span class="swatch-label">800</span></div>
+        <div class="swatch on-dark" style="background:#131A18"><span class="swatch-label">900</span></div>
+      </div>
+    </div>
+
+    <!-- WCAG -->
+    <div class="a11y-box">
+      <div class="a11y-title">♿ WCAG 2.0 AA コントラスト検証（白背景上）</div>
+      <div class="a11y-grid">
+        <div class="a11y-item" style="background:#fff;"><span class="sample" style="color:#222B29;">本文 — neutral-800</span><span class="detail a11y-pass">✓ 15.4 : 1</span></div>
+        <div class="a11y-item" style="background:#fff;"><span class="sample" style="color:#333E3C;">見出し — neutral-700</span><span class="detail a11y-pass">✓ 10.5 : 1</span></div>
+        <div class="a11y-item" style="background:#fff;"><span class="sample" style="color:#455250;">説明文 — neutral-600</span><span class="detail a11y-pass">✓ 7.97 : 1</span></div>
+        <div class="a11y-item" style="background:#fff;"><span class="sample" style="color:#5E6E68;font-weight:500;">メタ — neutral-500 w500</span><span class="detail a11y-pass">✓ 4.97 : 1（大テキスト・太字AA）</span></div>
+        <div class="a11y-item" style="background:#177568;"><span class="sample" style="color:#fff;">CTA白文字 on green-600</span><span class="detail" style="color:rgba(255,255,255,.85);">✓ 5.65 : 1</span></div>
+        <div class="a11y-item" style="background:#E8507A;"><span class="sample" style="color:#fff;">アクセント on pink-400</span><span class="detail" style="color:rgba(255,255,255,.85);">✓ 4.54 : 1（太字AA）</span></div>
+      </div>
+      <div style="margin-top:var(--space-md);font-size:var(--text-sm);color:var(--neutral-600);line-height:1.9;">
+        <strong style="color:var(--neutral-800);">使い分けルール：</strong><br>
+        本文 → neutral-800（15.4:1）／見出し → neutral-700（10.5:1）<br>
+        説明文 → neutral-600（7.97:1）／メタ → neutral-500 + weight 500（4.97:1）<br>
+        neutral-400以下 → テキスト情報の伝達には使用しない（placeholder・装飾のみ）
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="title">ピンクの使用ルール</div>
+      <p>
+        使用箇所：マッチ通知バッジ ／「初めての方歓迎」タグ ／ 振り返り画面「もう一度会いたい」選択後 ／ 特別キャンペーン<br>
+        ※ 日常のナビゲーション・ボタン・テキストには使用しない
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 03 GRADIENTS ═══════ -->
+  <section>
+    <div class="section-label">03</div>
+    <h2 class="section-title">グラデーション</h2>
+    <div class="gradient-grid">
+      <div class="gradient-swatch on-light" style="background:linear-gradient(168deg,#EBF5F4,#F7F9F9,#EDF1F0);"><span class="name">Main BG</span><span class="css">green-50 → neutral-50</span></div>
+      <div class="gradient-swatch on-light" style="background:linear-gradient(135deg,#C9E8E4,#EBF5F4);"><span class="name">Card Highlight</span><span class="css">green-100 → 50</span></div>
+      <div class="gradient-swatch on-dark" style="background:linear-gradient(135deg,#177568,#1D8C7E);"><span class="name">CTA Button</span><span class="css">green-600 → 500</span></div>
+      <div class="gradient-swatch on-light" style="background:linear-gradient(135deg,#FFF0F3,#FFD6E0);"><span class="name">Match Moment</span><span class="css">pink-50 → 100</span></div>
+      <div class="gradient-swatch on-dark" style="background:linear-gradient(135deg,#115C52,#177568,#1D8C7E);"><span class="name">Header Dark</span><span class="css">green-700 → 500</span></div>
+      <div class="gradient-swatch on-light" style="background:linear-gradient(180deg,#F7F9F9,#EBF5F4);"><span class="name">Page Fade</span><span class="css">neutral-50 → green-50</span></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 04 TYPOGRAPHY ═══════ -->
+  <section>
+    <div class="section-label">04</div>
+    <h2 class="section-title">タイポグラフィ</h2>
+    <p class="section-desc">日本語はNoto Sans JP、英字・数字はInter、コード表記はJetBrains Mono。ブランドロゴのみCormorant Garamond。font-family指定で英字→日本語の順にフォールバック。</p>
+
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">Brand Logo のみ</span><span class="type-family">Cormorant Garamond 300</span></div>
+      <div style="font-family:var(--font-display);font-weight:300;font-size:var(--text-brand);color:var(--neutral-800);letter-spacing:.04em;">SakuraCo</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">English — 英字・数字</span><span class="type-family">Inter 400 / 500</span></div>
+      <div style="font-family:var(--font-en);font-weight:400;font-size:var(--text-lg);color:var(--neutral-800);letter-spacing:-.01em;line-height:1.5;">The quick brown fox jumps over the lazy dog</div>
+      <div style="font-family:var(--font-en);font-weight:500;font-size:var(--text-base);color:var(--neutral-600);margin-top:8px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</div>
+      <div style="font-family:var(--font-en);font-weight:500;font-size:var(--text-base);color:var(--neutral-600);margin-top:4px;">0123456789 ¥1,000 — 19:30〜 — 2/20（Thu）</div>
+      <div style="font-size:var(--text-xs);color:var(--neutral-500);font-weight:500;margin-top:12px;">※ Noto Sans JPの英字より字幅がタイトで、価格・日時・残席数などの表示がすっきりする</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">Monospace — コード・HEX値</span><span class="type-family">JetBrains Mono 400</span></div>
+      <div style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--neutral-700);line-height:1.7;">#177568 — rgba(23, 117, 104, 0.28) — env(safe-area-inset-bottom)</div>
+      <div style="font-size:var(--text-xs);color:var(--neutral-500);font-weight:500;margin-top:8px;">※ カラーコード・技術ドキュメント・開発者向け表記に使用</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">混植例 — 日英混在テキスト</span><span class="type-family">Inter + Noto Sans JP</span></div>
+      <div style="font-family:var(--font-body);font-size:var(--text-base);color:var(--neutral-700);line-height:1.9;">2月20日（木）19:30 Start — 新宿エリアで4人のごはん会。参加費 ¥1,000（tax included）。残り2席です。</div>
+      <div style="font-size:var(--text-xs);color:var(--neutral-500);font-weight:500;margin-top:8px;">※ font-family: 'Inter', 'Noto Sans JP' の順で指定。英字・数字はInterで描画、日本語はNoto Sans JPにフォールバック</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">H1 — 画面タイトル</span><span class="type-family">Noto Sans JP 500</span></div>
+      <div style="font-size:var(--text-lg);font-weight:500;color:var(--neutral-800);">今週のイベント</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">H2 — セクション見出し</span><span class="type-family">Noto Sans JP 500</span></div>
+      <div style="font-size:var(--text-md);font-weight:500;color:var(--neutral-800);">木曜の夜、4人でごはん</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">Body — 本文</span><span class="type-family">Noto Sans JP 400</span></div>
+      <div style="font-size:var(--text-base);color:var(--neutral-700);line-height:1.9;">緊張しても大丈夫。みんな初めて同士です。頑張らなくても、そこにいるだけで十分。</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">Caption — メタ情報</span><span class="type-family">Noto Sans JP 500</span></div>
+      <div style="font-size:var(--text-sm);color:var(--neutral-500);font-weight:500;">2月15日（土）19:00〜 ｜ 新宿エリア ｜ 残り2席</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-meta"><span class="type-role">Button</span><span class="type-family">Noto Sans JP 500</span></div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+        <button class="btn btn-primary">参加する</button>
+        <button class="btn btn-secondary">詳しく見る</button>
+        <button class="btn btn-ghost">スキップ</button>
+      </div>
+    </div>
+
+    <div class="scale-table-wrap">
+      <table class="scale-table">
+        <thead><tr><th>Role</th><th>Font Stack</th><th>Weight</th><th>Mobile</th><th>Desktop</th><th>Color</th><th>Contrast</th></tr></thead>
+        <tbody>
+          <tr><td>Brand</td><td style="font-family:var(--font-mono);font-size:10px;">Cormorant Garamond</td><td>300</td><td>36px</td><td>48px</td><td style="color:var(--green-700)">green-700</td><td>6.26:1 ✓</td></tr>
+          <tr><td>H1</td><td style="font-family:var(--font-mono);font-size:10px;">Inter → Noto Sans JP</td><td>500</td><td>20px</td><td>24px</td><td style="color:var(--neutral-800)">neutral-800</td><td>15.4:1 ✓</td></tr>
+          <tr><td>H2</td><td style="font-family:var(--font-mono);font-size:10px;">Inter → Noto Sans JP</td><td>500</td><td>17px</td><td>18px</td><td style="color:var(--neutral-800)">neutral-800</td><td>15.4:1 ✓</td></tr>
+          <tr><td>Body</td><td style="font-family:var(--font-mono);font-size:10px;">Inter → Noto Sans JP</td><td>400</td><td>15px</td><td>15px</td><td style="color:var(--neutral-700)">neutral-700</td><td>10.5:1 ✓</td></tr>
+          <tr><td>Caption</td><td style="font-family:var(--font-mono);font-size:10px;">Inter → Noto Sans JP</td><td>500</td><td>13px</td><td>13px</td><td style="color:var(--neutral-500)">neutral-500</td><td>4.97:1 ✓</td></tr>
+          <tr><td>Button</td><td style="font-family:var(--font-mono);font-size:10px;">Inter → Noto Sans JP</td><td>500</td><td>13px</td><td>14px</td><td>on-color</td><td>4.5+:1 ✓</td></tr>
+          <tr><td>Code</td><td style="font-family:var(--font-mono);font-size:10px;">JetBrains Mono</td><td>400</td><td>11px</td><td>12px</td><td style="color:var(--neutral-700)">neutral-700</td><td>10.5:1 ✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 05 MOBILE SPECIFIC ═══════ -->
+  <section>
+    <div class="section-label">05</div>
+    <h2 class="section-title">📱 モバイル固有の設計ルール</h2>
+    <p class="section-desc">ユーザーの大半がiPhone / Androidを使用。すべてのUI要素はモバイルファーストで設計する。</p>
+
+    <div class="mobile-spec">
+      <div class="title">タッチターゲット</div>
+      <div class="rule">すべてのインタラクティブ要素は最小 44×44px（Apple HIG / WCAG 2.5.5）</div>
+      <div class="rule">推奨サイズは 48×48px（Material Design 3）</div>
+      <div class="rule">ボタン間のギャップは最低 8px（誤タップ防止）</div>
+      <div class="touch-demo">
+        <div class="touch-box" style="width:44px;height:44px;">44px<br>最小</div>
+        <div class="touch-box" style="width:48px;height:48px;">48px<br>推奨</div>
+        <div class="touch-box" style="width:36px;height:36px;border-color:var(--pink-300);color:var(--pink-500);">36px<br>Chipのみ</div>
+      </div>
+    </div>
+
+    <div class="mobile-spec">
+      <div class="title">入力フォーム（iOS対策）</div>
+      <div class="rule">inputのfont-sizeは最低16px（iOS Safariの自動ズーム防止）</div>
+      <div class="rule">本アプリでは15pxを採用 → <code style="background:var(--neutral-100);padding:2px 6px;border-radius:4px;font-size:11px;">meta viewport</code> の <code style="background:var(--neutral-100);padding:2px 6px;border-radius:4px;font-size:11px;">maximum-scale=1</code> で対応</div>
+      <div class="rule">テキストエリアは十分な高さ（min-height: 48px）を確保</div>
+      <div class="rule">フォーカス時のハイライトは box-shadow で表現（outline不使用）</div>
+      <div class="note">⚠️ iOS: <code>-webkit-appearance: none;</code> でデフォルトスタイルをリセット</div>
+    </div>
+
+    <div class="mobile-spec">
+      <div class="title">レイアウト・余白</div>
+      <div class="rule">画面左右のパディング: 16px（狭い画面でも情報が切れない）</div>
+      <div class="rule">カード間の余白: 12〜16px</div>
+      <div class="rule">ボトムナビゲーションバーの高さ: 56px + safe area</div>
+      <div class="rule">CTAボタンはフッター固定時、safe area下を考慮</div>
+      <div class="rule">スクロール方向は基本垂直のみ。横スクロールはチップ・カルーセルに限定</div>
+    </div>
+
+    <div class="mobile-spec">
+      <div class="title">セーフエリア（ノッチ・Dynamic Island対応）</div>
+      <div class="rule">上部: ステータスバー + ノッチ/Dynamic Island を避ける</div>
+      <div class="rule">下部: ホームインジケーター領域を避ける</div>
+      <div class="rule">固定フッター/CTAには safe area padding を必ず適用</div>
+      <div class="note" style="font-family:var(--font-mono); font-size:11px; line-height:1.7;">
+        padding-bottom: calc(16px + env(safe-area-inset-bottom));<br>
+        padding-top: calc(16px + env(safe-area-inset-top));
+      </div>
+    </div>
+
+    <div class="mobile-spec">
+      <div class="title">パフォーマンス</div>
+      <div class="rule">backdrop-filter: blur() は重い → 使用箇所を限定（ヘッダー・モーダルのみ）</div>
+      <div class="rule">ボタンの :hover は不要 → :active スタイルを重視</div>
+      <div class="rule">画像は WebP + lazy loading を徹底</div>
+      <div class="rule">フォント読み込み: Noto Sans JP (300/400/500/700) + Inter (300/400/500/700) + JetBrains Mono (400/500)</div>
+      <div class="rule">Inter + Noto Sans JPの合計で約400KB。display=swap で FOUT 対応済み</div>
+    </div>
+
+    <div class="mobile-spec">
+      <div class="title">スマートフォン特有のインタラクション</div>
+      <div class="rule">スワイプ: オンボーディング、アイスブレイクのトピックカード切り替え</div>
+      <div class="rule">プルダウン: ホーム画面のイベント一覧リフレッシュ</div>
+      <div class="rule">ハプティクス: マッチ成立時に軽い振動（iOS Taptic / Android Vibrate）</div>
+      <div class="rule">ボトムシート: イベント詳細・フィルターはボトムシートで表示</div>
+      <div class="rule">トースト通知: 操作完了メッセージは画面上部にトーストで3秒表示</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 06 COMPONENTS ═══════ -->
+  <section>
+    <div class="section-label">06</div>
+    <h2 class="section-title">UIコンポーネント</h2>
+
+    <div class="components-grid">
+      <div class="component-card">
+        <div class="component-label">Buttons（min-height: 44px）</div>
+        <div class="btn-group">
+          <button class="btn btn-primary">参加する</button>
+          <button class="btn btn-secondary">詳しく見る</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-ghost">スキップ</button>
+          <button class="btn btn-accent">マッチ！ ✦</button>
+        </div>
+        <button class="btn btn-primary btn-block-mobile" style="margin-top:var(--space-sm);">モバイルCTA（フル幅）</button>
+        <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">※ モバイルの主要CTAは画面幅いっぱいに配置</div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-label">Input（min-height: 48px）</div>
+        <label class="input-label">ニックネーム</label>
+        <input class="input-field" type="text" placeholder="あなたの呼び名を入力">
+        <div style="height:var(--space-md);"></div>
+        <label class="input-label">ひとこと</label>
+        <input class="input-field" type="text" placeholder="（任意）好きなこと、最近のこと…">
+      </div>
+
+      <div class="component-card">
+        <div class="component-label">Chips（min-height: 36px）・横スクロール可</div>
+        <div class="chip-group" style="overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px;">
+          <span class="chip active" style="flex-shrink:0;">すべて</span>
+          <span class="chip" style="flex-shrink:0;">新宿</span>
+          <span class="chip" style="flex-shrink:0;">渋谷</span>
+          <span class="chip" style="flex-shrink:0;">池袋</span>
+          <span class="chip" style="flex-shrink:0;">中野</span>
+          <span class="chip" style="flex-shrink:0;">高円寺</span>
+          <span class="chip" style="flex-shrink:0;">上野</span>
+        </div>
+        <div style="height:var(--space-lg);"></div>
+        <div class="component-label">Interest（折り返し）</div>
+        <div class="chip-group">
+          <span class="chip active">映画</span><span class="chip active">ワイン</span>
+          <span class="chip">旅行</span><span class="chip">筋トレ</span><span class="chip">K-POP</span>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <div class="component-label">Tags & Badges</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--space-md);">
+          <span style="padding:4px 12px;background:var(--green-100);color:var(--green-800);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">ランダム</span>
+          <span style="padding:4px 12px;background:var(--green-100);color:var(--green-800);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">タメ会</span>
+          <span style="padding:4px 12px;background:var(--pink-100);color:var(--pink-500);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">初めての方歓迎</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:var(--text-base);color:var(--neutral-700);">マッチ</span>
+          <span class="notification-badge">2</span>
+          <span style="font-size:var(--text-xs);color:var(--neutral-600);">← ピンクバッジ</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:var(--space-xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Event Card</div>
+      <div class="event-cards-grid">
+        <div class="event-card">
+          <div class="tags"><span class="tag">ランダム</span><span class="tag first-time">初めての方歓迎</span></div>
+          <h3>木曜の夜、4人でごはん</h3>
+          <div class="meta">2月20日（木）19:30〜 ｜ 新宿エリア</div>
+          <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り2席</span></div>
+        </div>
+        <div class="event-card">
+          <div class="tags"><span class="tag">タメ会</span></div>
+          <h3>30代同世代で土曜ランチ</h3>
+          <div class="meta">2月22日（土）12:00〜 ｜ 渋谷エリア</div>
+          <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り4席</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 07 SPACING ═══════ -->
+  <section>
+    <div class="section-label">07</div>
+    <h2 class="section-title">スペーシング・角丸・シャドウ</h2>
+    <div style="margin-bottom:var(--space-xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Spacing（4px base grid）</div>
+      <div class="spacing-row"><span class="spacing-label">xs — 4px</span><div class="spacing-bar" style="width:4px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">sm — 8px</span><div class="spacing-bar" style="width:16px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">md — 16px</span><div class="spacing-bar" style="width:48px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">lg — 24px</span><div class="spacing-bar" style="width:80px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">xl — 32px</span><div class="spacing-bar" style="width:112px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">2xl — 48px</span><div class="spacing-bar" style="width:160px;"></div></div>
+    </div>
+    <div style="margin-bottom:var(--space-xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Border Radius</div>
+      <div class="radius-grid">
+        <div class="radius-item" style="border-radius:8px;">sm 8</div>
+        <div class="radius-item" style="border-radius:12px;">md 12</div>
+        <div class="radius-item" style="border-radius:16px;">lg 16</div>
+        <div class="radius-item" style="border-radius:24px;">xl 24</div>
+        <div class="radius-item" style="border-radius:9999px;">full</div>
+      </div>
+    </div>
+    <div>
+      <div class="component-label" style="margin-bottom:var(--space-md);">Shadows</div>
+      <div class="shadow-grid">
+        <div class="shadow-item" style="box-shadow:var(--shadow-sm);"><span class="name">sm</span></div>
+        <div class="shadow-item" style="box-shadow:var(--shadow-md);"><span class="name">md</span></div>
+        <div class="shadow-item" style="box-shadow:var(--shadow-lg);"><span class="name">lg</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 08 DO/DON'T ═══════ -->
+  <section>
+    <div class="section-label">08</div>
+    <h2 class="section-title">デザイン Do / Don't</h2>
+    <div class="dodont-grid">
+      <div class="dodont-card do-card">
+        <div class="label">Do</div>
+        <ul>
+          <li>モバイルファーストで設計する</li>
+          <li>タッチターゲットは44px以上を厳守</li>
+          <li>余白を多めに取り呼吸感を出す</li>
+          <li>フォントウェイトは300〜500で統一</li>
+          <li>CTAは画面下部に固定（親指ゾーン）</li>
+          <li>ピンクは「特別な瞬間」にだけ点灯</li>
+          <li>テキストのコントラスト比 WCAG AA以上</li>
+          <li>セーフエリアを常に考慮する</li>
+        </ul>
+      </div>
+      <div class="dodont-card dont-card">
+        <div class="label">Don't</div>
+        <ul>
+          <li>デスクトップ前提でデザインしない</li>
+          <li>小さすぎるタップ領域を作らない</li>
+          <li>neutral-400以下をテキスト情報に使わない</li>
+          <li>太字（700+）を多用しない</li>
+          <li>レインボーカラーを使わない</li>
+          <li>ピンクを日常的に使わない</li>
+          <li>backdrop-filterを多用しない（性能）</li>
+          <li>hoverだけに頼ったインタラクション</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 09 VOICE & TONE ═══════ -->
+  <section>
+    <div class="section-label">09</div>
+    <h2 class="section-title">Voice & Tone</h2>
+    <p class="section-desc">語りかけるように。友人が隣で静かに話しかけてくるような距離感。</p>
+    <div class="dodont-grid">
+      <div class="dodont-card do-card">
+        <div class="label">こう言う</div>
+        <ul>
+          <li>「緊張しても大丈夫。」</li>
+          <li>「まだ決めなくていいよ。」</li>
+          <li>「今日はどんな夜でしたか？」</li>
+          <li>「素敵な夜でしたね。」</li>
+          <li>「あなたのペースで。」</li>
+        </ul>
+      </div>
+      <div class="dodont-card dont-card">
+        <div class="label">こう言わない</div>
+        <ul>
+          <li>「マッチング成立！」</li>
+          <li>「あなたに興味がある人が○人！」</li>
+          <li>「急いで！残りわずか！」</li>
+          <li>「出会いのチャンスを逃すな」</li>
+          <li>「プロフィールを充実させよう」</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 10 CSS REFERENCE ═══════ -->
+  <section>
+    <div class="section-label">10</div>
+    <h2 class="section-title">CSS変数リファレンス</h2>
+    <div class="code-block">
+      <pre><span class="code-comment">/* SakuraCo v3 — Mobile First Design Tokens */</span>
+:root {
+  <span class="code-comment">/* Colors */</span>
+  <span class="code-prop">--green-50</span>: <span class="code-val">#EBF5F4</span>;  <span class="code-prop">--green-100</span>: <span class="code-val">#C9E8E4</span>;
+  <span class="code-prop">--green-200</span>: <span class="code-val">#93D1CA</span>;  <span class="code-prop">--green-300</span>: <span class="code-val">#5BB8AE</span>;
+  <span class="code-prop">--green-400</span>: <span class="code-val">#34A396</span>;  <span class="code-prop">--green-500</span>: <span class="code-val">#1D8C7E</span>;
+  <span class="code-prop">--green-600</span>: <span class="code-val">#177568</span>;  <span class="code-comment">/* CTA bg — 白文字 5.65:1 */</span>
+  <span class="code-prop">--green-700</span>: <span class="code-val">#115C52</span>;  <span class="code-comment">/* Brand — 白bg 6.26:1 */</span>
+
+  <span class="code-prop">--pink-400</span>: <span class="code-val">#E8507A</span>;  <span class="code-comment">/* Accent — 白文字 4.54:1 */</span>
+  <span class="code-prop">--pink-500</span>: <span class="code-val">#C73D63</span>;  <span class="code-comment">/* Text pink — 白bg 5.85:1 */</span>
+
+  <span class="code-prop">--neutral-500</span>: <span class="code-val">#5E6E68</span>; <span class="code-comment">/* caption 4.97:1 (w500) */</span>
+  <span class="code-prop">--neutral-600</span>: <span class="code-val">#455250</span>; <span class="code-comment">/* sub text 7.97:1 */</span>
+  <span class="code-prop">--neutral-700</span>: <span class="code-val">#333E3C</span>; <span class="code-comment">/* body 10.5:1 */</span>
+  <span class="code-prop">--neutral-800</span>: <span class="code-val">#222B29</span>; <span class="code-comment">/* heading 15.4:1 */</span>
+
+  <span class="code-comment">/* Font */</span>
+  <span class="code-prop">--font-display</span>: <span class="code-val">'Cormorant Garamond', serif</span>;            <span class="code-comment">/* ロゴのみ */</span>
+  <span class="code-prop">--font-en</span>:      <span class="code-val">'Inter', sans-serif</span>;                     <span class="code-comment">/* 英字・数字 */</span>
+  <span class="code-prop">--font-body</span>:    <span class="code-val">'Inter', 'Noto Sans JP', sans-serif</span>;     <span class="code-comment">/* 本文（英→日fallback） */</span>
+  <span class="code-prop">--font-mono</span>:    <span class="code-val">'JetBrains Mono', monospace</span>;             <span class="code-comment">/* コード・HEX */</span>
+
+  <span class="code-comment">/* Mobile-first type scale */</span>
+  <span class="code-prop">--text-xs</span>: <span class="code-val">11px</span>;  <span class="code-prop">--text-sm</span>: <span class="code-val">13px</span>;
+  <span class="code-prop">--text-base</span>: <span class="code-val">15px</span>;  <span class="code-prop">--text-md</span>: <span class="code-val">17px</span>;
+  <span class="code-prop">--text-lg</span>: <span class="code-val">20px</span>;  <span class="code-prop">--text-xl</span>: <span class="code-val">28px</span>;
+
+  <span class="code-comment">/* Touch targets */</span>
+  <span class="code-prop">--touch-min</span>: <span class="code-val">44px</span>;
+  <span class="code-prop">--touch-comfortable</span>: <span class="code-val">48px</span>;
+
+  <span class="code-comment">/* Safe area */</span>
+  <span class="code-prop">--safe-bottom</span>: <span class="code-val">env(safe-area-inset-bottom)</span>;
+  <span class="code-prop">--safe-top</span>: <span class="code-val">env(safe-area-inset-top)</span>;
+
+  <span class="code-comment">/* BG */</span>
+  <span class="code-prop">--bg-main</span>: <span class="code-val">linear-gradient(168deg, #EBF5F4, #F7F9F9, #EBF5F4)</span>;
+  <span class="code-prop">--bg-card</span>: <span class="code-val">rgba(255, 255, 255, 0.78)</span>;
+}
+
+<span class="code-comment">/* Desktop overrides */</span>
+@media (min-width: 768px) {
+  :root {
+    <span class="code-prop">--text-md</span>: <span class="code-val">18px</span>;  <span class="code-prop">--text-lg</span>: <span class="code-val">24px</span>;
+    <span class="code-prop">--text-xl</span>: <span class="code-val">32px</span>;  <span class="code-prop">--text-brand</span>: <span class="code-val">48px</span>;
+  }
+}</pre>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

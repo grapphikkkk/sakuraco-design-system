@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SakuraCo — Tone & Manner Guide v3 (Mobile First)</title>
+<title>SakuraCo — Tone & Manner Guide v4 (Mobile First)</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════
@@ -67,6 +67,61 @@
   /* ══════ TOUCH TARGET（WCAG 2.5.5 / Apple HIG） ══════ */
   --touch-min: 44px;   /* 最小タッチ領域 */
   --touch-comfortable: 48px; /* 推奨タッチ領域 */
+
+  /* ══════ EXTENDED — Warm Sunset（暖色サブカラー） ══════ */
+  --sunset-50:  #FEF3EE;  --sunset-100: #FCE6DC;
+  --sunset-200: #F5C8B0;  --sunset-300: #F19C79;
+  --sunset-400: #E67C50;  --sunset-500: #C0623B;
+  --sunset-600: #964B2D;
+
+  /* ══════ EXTENDED — Deep Plum（深みサブカラー） ══════ */
+  --plum-50:  #F9EFF2;  --plum-100: #EEDAE1;
+  --plum-200: #D9B2BF;  --plum-300: #BD7D93;
+  --plum-400: #A63950;  --plum-500: #81293E;
+  --plum-600: #621E2F;
+
+  /* ══════ EXTENDED — Indigo Blue（落ち着いた青） ══════ */
+  --indigo-50:  #EEF1F8;  --indigo-100: #D5DCEE;
+  --indigo-200: #A8B5D9;  --indigo-300: #7B8EC2;
+  --indigo-400: #5570A8;  --indigo-500: #3D5489;
+  --indigo-600: #2D3E66;
+
+  /* ══════ SEMANTIC — Success（Primary green 派生） ══════ */
+  --success-50:  var(--green-50);   --success-100: var(--green-100);
+  --success-200: var(--green-200);  --success-300: var(--green-300);
+  --success-400: var(--green-500);  --success-500: var(--green-600);
+  --success-600: var(--green-700);
+
+  /* ══════ SEMANTIC — Warning（穏やかなアンバー） ══════ */
+  --warning-50:  #FEF7EC;  --warning-100: #FCEACC;
+  --warning-200: #F8D599;  --warning-300: #F0BC66;
+  --warning-400: #D9A040;  --warning-500: #B5852E;
+  --warning-600: #8C6823;
+
+  /* ══════ SEMANTIC — Error（落ち着いたレッド） ══════ */
+  --error-50:  #FDF2F2;  --error-100: #F9DADA;
+  --error-200: #F0B0B0;  --error-300: #E07C7C;
+  --error-400: #CC5555;
+  --error-500: #A83A3A;  --error-600: #832D2D;
+
+  /* ══════ SEMANTIC — Info（Indigo Blue 派生） ══════ */
+  --info-50:  var(--indigo-50);   --info-100: var(--indigo-100);
+  --info-200: var(--indigo-200);  --info-300: var(--indigo-300);
+  --info-400: var(--indigo-400);  --info-500: var(--indigo-500);
+  --info-600: var(--indigo-600);
+
+  /* ══════ SEMANTIC ALIAS（用途別マッピング） ══════ */
+  --disabled: var(--neutral-200);
+  --disabled-foreground: var(--neutral-400);
+  --focus-ring: rgba(29, 140, 126, 0.18);
+  --overlay: rgba(19, 26, 24, 0.45);
+  --divider: var(--neutral-200);
+  --red-500: var(--error-400);
+
+  /* ══════ SPACING ALIAS（コンポーネント用） ══════ */
+  --spacing-xs: var(--space-xs);   --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);   --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);   --spacing-2xl: var(--space-2xl);
 }
 
 /* ══════ Desktop overrides ══════ */
@@ -623,6 +678,306 @@ section { margin-bottom: var(--space-3xl); }
   border-radius: 4px; font-size: var(--text-xs);
   font-family: var(--font-mono); color: var(--green-700);
 }
+
+/* ═══════ SEMANTIC COLOR BADGES ═══════ */
+.badge-success { background: var(--green-100); color: var(--green-700); }
+.badge-warning { background: var(--warning-100); color: var(--warning-600); }
+.badge-error { background: var(--error-100); color: var(--error-600); }
+.badge-info { background: var(--indigo-100); color: var(--indigo-600); }
+.badge-sunset { background: var(--sunset-100); color: var(--sunset-600); }
+.badge-plum { background: var(--plum-100); color: var(--plum-600); }
+.badge-indigo { background: var(--indigo-100); color: var(--indigo-600); }
+
+/* ═══════ TOAST NOTIFICATION ═══════ */
+.toast {
+  display: flex; align-items: center; gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: 500;
+  box-shadow: var(--shadow-md);
+  max-width: 360px; width: 100%;
+}
+.toast-success { background: var(--green-50);   border: 1px solid var(--green-200);   color: var(--green-700); }
+.toast-warning { background: var(--warning-50); border: 1px solid var(--warning-200); color: var(--warning-600); }
+.toast-error   { background: var(--error-50);   border: 1px solid var(--error-200);   color: var(--error-600); }
+.toast-info    { background: var(--indigo-50);  border: 1px solid var(--indigo-200);  color: var(--indigo-600); }
+.toast-icon { font-size: var(--text-md); flex-shrink: 0; }
+
+/* ═══════ ALERT / BANNER ═══════ */
+.alert {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm); line-height: 1.8;
+  border-left: 3px solid;
+}
+.alert-success { background: var(--green-50);   border-left-color: var(--green-400);   color: var(--green-700); }
+.alert-warning { background: var(--warning-50); border-left-color: var(--warning-400); color: var(--warning-600); }
+.alert-error   { background: var(--error-50);   border-left-color: var(--error-400);   color: var(--error-600); }
+.alert-info    { background: var(--indigo-50);  border-left-color: var(--indigo-400);  color: var(--indigo-600); }
+.alert .alert-title { font-weight: 700; margin-bottom: 2px; }
+
+/* ═══════ BOTTOM NAVIGATION BAR ═══════ */
+.bottom-nav {
+  display: flex; align-items: center; justify-content: space-around;
+  height: 56px; background: var(--bg-card);
+  border-top: 1px solid var(--green-100);
+  max-width: 414px; width: 100%;
+  padding-bottom: 0; /* safe-area handled inline */
+}
+.bottom-nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 10px; font-weight: 500; color: var(--neutral-400);
+  cursor: pointer; min-width: 56px; min-height: 44px;
+  justify-content: center; background: none; border: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s;
+}
+.bottom-nav-item.active { color: var(--green-600); }
+.bottom-nav-item .nav-icon { font-size: 22px; line-height: 1; }
+
+/* ═══════ AVATAR / PARTICIPANT ICON ═══════ */
+.avatar {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; font-weight: 500; color: #fff;
+  flex-shrink: 0;
+}
+.avatar-sm { width: 32px; height: 32px; font-size: var(--text-xs); }
+.avatar-md { width: 40px; height: 40px; font-size: var(--text-sm); }
+.avatar-lg { width: 48px; height: 48px; font-size: var(--text-md); }
+.avatar-xl { width: 64px; height: 64px; font-size: var(--text-lg); }
+
+/* ═══════ PROGRESS INDICATOR ═══════ */
+.progress-bar-track {
+  width: 100%; height: 6px;
+  background: var(--neutral-200); border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%; border-radius: var(--radius-full);
+  background: var(--green-500);
+  transition: width 0.4s ease;
+}
+
+/* Step indicator */
+.step-indicator {
+  display: flex; align-items: center; gap: 0; width: 100%;
+}
+.step-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--neutral-300); flex-shrink: 0;
+  transition: all 0.3s;
+}
+.step-dot.active { background: var(--green-600); width: 28px; border-radius: var(--radius-full); }
+.step-dot.completed { background: var(--green-400); }
+.step-line {
+  flex: 1; height: 2px; background: var(--neutral-200);
+  margin: 0 4px;
+}
+.step-line.completed { background: var(--green-400); }
+
+/* ═══════ TOGGLE / SWITCH ═══════ */
+.toggle-track {
+  position: relative; width: 48px; height: 28px;
+  background: var(--neutral-300); border-radius: var(--radius-full);
+  cursor: pointer; transition: background 0.25s;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+.toggle-track.on { background: var(--green-500); }
+.toggle-thumb {
+  position: absolute; top: 2px; left: 2px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  transition: transform 0.25s;
+}
+.toggle-track.on .toggle-thumb { transform: translateX(20px); }
+
+/* ═══════ CHECKBOX (styled) ═══════ */
+.checkbox-row {
+  display: flex; align-items: start; gap: var(--space-sm);
+  min-height: var(--touch-min); cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.checkbox-box {
+  width: 20px; height: 20px; min-width: 20px;
+  border-radius: 4px; border: 1.5px solid var(--neutral-300);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 2px; transition: all 0.2s;
+  background: #fff;
+}
+.checkbox-box.checked {
+  background: var(--green-600); border-color: var(--green-600);
+  color: #fff; font-size: 12px;
+}
+.checkbox-label { font-size: var(--text-sm); color: var(--neutral-700); line-height: 1.6; }
+
+/* ═══════ RADIO OPTION ═══════ */
+.radio-option {
+  display: flex; align-items: center; gap: var(--space-sm);
+  width: 100%; min-height: var(--touch-min);
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: 400;
+  border: 1.5px solid var(--neutral-300);
+  background: rgba(255,255,255,0.78);
+  color: var(--neutral-700);
+  cursor: pointer; transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.radio-option.selected {
+  border-color: var(--green-600); background: var(--green-600);
+  color: #fff; font-weight: 500;
+}
+.radio-dot {
+  width: 16px; height: 16px; min-width: 16px;
+  border-radius: 50%; border: 2px solid var(--neutral-300);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.radio-option.selected .radio-dot {
+  border-color: #fff;
+}
+.radio-dot-inner {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: transparent; transition: background 0.2s;
+}
+.radio-option.selected .radio-dot-inner { background: #fff; }
+
+/* ═══════ BOTTOM SHEET HANDLE ═══════ */
+.bottom-sheet-handle {
+  width: 36px; height: 4px;
+  background: var(--neutral-300);
+  border-radius: var(--radius-full);
+  margin: var(--space-sm) auto var(--space-md);
+}
+
+/* ═══════ SKELETON LOADING ═══════ */
+.skeleton {
+  background: linear-gradient(90deg, var(--neutral-100) 25%, var(--neutral-200) 50%, var(--neutral-100) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ═══════ EMPTY STATE ═══════ */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  min-height: 240px;
+}
+.empty-state-icon {
+  width: 64px; height: 64px; margin-bottom: var(--space-md);
+  background: var(--green-50); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-400);
+}
+.empty-state-title {
+  font-size: var(--text-base); font-weight: 500;
+  color: var(--neutral-700); margin-bottom: var(--space-xs);
+}
+.empty-state-desc {
+  font-size: var(--text-sm); color: var(--neutral-500);
+  line-height: 1.8;
+}
+
+/* ═══════ DIVIDER WITH LABEL ═══════ */
+.divider-label {
+  display: flex; align-items: center; gap: var(--space-md);
+  margin: var(--space-xl) 0;
+}
+.divider-label::before, .divider-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--neutral-200);
+}
+.divider-label span {
+  font-size: var(--text-xs); font-weight: 500;
+  color: var(--neutral-500); white-space: nowrap;
+}
+
+/* ═══════ RATING BUTTON GROUP ═══════ */
+.rating-group {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+}
+.rating-btn {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2px; min-height: var(--touch-comfortable);
+  padding: var(--space-xs) var(--space-xs);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs); font-weight: 400;
+  border: 1.5px solid var(--neutral-300);
+  background: rgba(255,255,255,0.78); color: var(--neutral-700);
+  cursor: pointer; transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rating-btn.selected {
+  border-color: var(--green-600); background: var(--green-600);
+  color: #fff; font-weight: 500;
+}
+.rating-btn .rating-num { font-size: var(--text-md); line-height: 1; }
+
+/* ═══════ MODAL OVERLAY ═══════ */
+.modal-overlay-demo {
+  position: relative;
+  width: 100%; aspect-ratio: 3/2;
+  background: var(--neutral-800); border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.modal-overlay-demo::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--overlay);
+}
+.modal-demo-sheet {
+  position: relative; z-index: 1;
+  width: 90%; background: var(--bg-card);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: var(--space-lg);
+  min-height: 60%;
+}
+
+/* ═══════ SEMANTIC PALETTE DEMO GRID ═══════ */
+.semantic-palette-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+@media (min-width: 600px) {
+  .semantic-palette-grid { grid-template-columns: 1fr 1fr; }
+}
+.semantic-palette-card {
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.semantic-palette-header {
+  padding: var(--space-md) var(--space-lg);
+  color: #fff; font-size: var(--text-sm); font-weight: 500;
+}
+.semantic-palette-swatches {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+}
+.semantic-swatch {
+  aspect-ratio: 1; display: flex;
+  align-items: flex-end; justify-content: flex-start;
+  padding: 3px;
+}
+.semantic-swatch span {
+  font-size: 8px; font-family: var(--font-mono); font-weight: 500;
+}
+
+/* ═══════ NEW COMPONENTS GRID (3 col on desktop) ═══════ */
+.components-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+@media (min-width: 768px) {
+  .components-grid-3 { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-lg); }
+}
 </style>
 </head>
 <body>
@@ -632,7 +987,7 @@ section { margin-bottom: var(--space-3xl); }
     <div class="brand-name">SakuraCo</div>
     <p class="brand-tagline">そこにあるのは、思いがけない友情かもしれないし、ときめきかもしれない</p>
     <p class="brand-sub">僕と僕らのためのお食事会</p>
-    <div class="doc-label">Tone & Manner v3 — Mobile First</div>
+    <div class="doc-label">Tone & Manner v4 — Mobile First</div>
   </header>
 
   <div class="divider"></div>
@@ -658,7 +1013,7 @@ section { margin-bottom: var(--space-3xl); }
       <div class="principle"><div class="num">01</div><h4>爽やかな青みグリーン</h4><p>ティール寄りのグリーンで清涼感を演出。背景は淡いグラデーション、要素はすりガラスで浮遊感。</p></div>
       <div class="principle"><div class="num">02</div><h4>力まない</h4><p>フォントウェイトは300〜500。太字は最小限。声を張らない落ち着いたトーン。</p></div>
       <div class="principle"><div class="num">03</div><h4>導く、でも押さない</h4><p>UIは流れに乗せるが強制しない。アクションは明確だが、選ばないことも許容する設計。</p></div>
-      <div class="principle"><div class="num">04</div><h4>ピンクは"ときめき"の印</h4><p>マッチ通知・初回バッジなど「何かが起こる瞬間」にだけ使用。日常画面では抑制。</p></div>
+      <div class="principle"><div class="num">04</div><h4>ピンクは"ときめき"の印</h4><p>つながり通知・初回バッジなど「何かが起こる瞬間」にだけ使用。日常画面では抑制。</p></div>
     </div>
   </section>
 
@@ -735,7 +1090,7 @@ section { margin-bottom: var(--space-3xl); }
     <div class="info-box">
       <div class="title">ピンクの使用ルール</div>
       <p>
-        使用箇所：マッチ通知バッジ ／「初めての方歓迎」タグ ／ 振り返り画面「もう一度会いたい」選択後 ／ 特別キャンペーン<br>
+        使用箇所：つながり通知バッジ ／「初めての方歓迎」タグ ／ 振り返り画面「もう一度会いたい」選択後 ／ 特別キャンペーン<br>
         ※ 日常のナビゲーション・ボタン・テキストには使用しない
       </p>
     </div>
@@ -892,7 +1247,7 @@ section { margin-bottom: var(--space-3xl); }
       <div class="title">スマートフォン特有のインタラクション</div>
       <div class="rule">スワイプ: オンボーディング、アイスブレイクのトピックカード切り替え</div>
       <div class="rule">プルダウン: ホーム画面のイベント一覧リフレッシュ</div>
-      <div class="rule">ハプティクス: マッチ成立時に軽い振動（iOS Taptic / Android Vibrate）</div>
+      <div class="rule">ハプティクス: つながり成立時に軽い振動（iOS Taptic / Android Vibrate）</div>
       <div class="rule">ボトムシート: イベント詳細・フィルターはボトムシートで表示</div>
       <div class="rule">トースト通知: 操作完了メッセージは画面上部にトーストで3秒表示</div>
     </div>
@@ -914,7 +1269,7 @@ section { margin-bottom: var(--space-3xl); }
         </div>
         <div class="btn-group">
           <button class="btn btn-ghost">スキップ</button>
-          <button class="btn btn-accent">マッチ！ ✦</button>
+          <button class="btn btn-accent">つながり ✦</button>
         </div>
         <button class="btn btn-primary btn-block-mobile" style="margin-top:var(--space-sm);">モバイルCTA（フル幅）</button>
         <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">※ モバイルの主要CTAは画面幅いっぱいに配置</div>
@@ -956,7 +1311,7 @@ section { margin-bottom: var(--space-3xl); }
           <span style="padding:4px 12px;background:var(--pink-100);color:var(--pink-500);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">初めての方歓迎</span>
         </div>
         <div style="display:flex;align-items:center;gap:12px;">
-          <span style="font-size:var(--text-base);color:var(--neutral-700);">マッチ</span>
+          <span style="font-size:var(--text-base);color:var(--neutral-700);">つながり</span>
           <span class="notification-badge">2</span>
           <span style="font-size:var(--text-xs);color:var(--neutral-600);">← ピンクバッジ</span>
         </div>
@@ -1074,7 +1429,7 @@ section { margin-bottom: var(--space-3xl); }
       <div class="dodont-card dont-card">
         <div class="label">こう言わない</div>
         <ul>
-          <li>「マッチング成立！」</li>
+          <li>「マッチング成立！」（→「つながり」を使う）</li>
           <li>「あなたに興味がある人が○人！」</li>
           <li>「急いで！残りわずか！」</li>
           <li>「出会いのチャンスを逃すな」</li>
@@ -1139,6 +1494,590 @@ section { margin-bottom: var(--space-3xl); }
     <span class="code-prop">--text-xl</span>: <span class="code-val">32px</span>;  <span class="code-prop">--text-brand</span>: <span class="code-val">48px</span>;
   }
 }</pre>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 11 SEMANTIC COLORS ═══════ -->
+  <section>
+    <div class="section-label">11</div>
+    <h2 class="section-title">拡張カラー ＆ セマンティックカラー</h2>
+    <p class="section-desc">Primary（ブルーグリーン）・Accent（ピンク）と相性の良い拡張カラーと、UIステートを伝えるセマンティックカラー。<br>ティールとの相性を重視し、添付画像のCoral／Purple／Aquaなどのペアリング理論に基づいて選色。</p>
+
+    <!-- Extended — Warm Sunset -->
+    <div class="palette-group">
+      <div class="palette-group-title">Extended — Warm Sunset <span class="badge badge-sunset">暖色・コーラル系</span></div>
+      <div class="palette-row" style="grid-template-columns: repeat(7, 1fr);">
+        <div class="swatch on-light" style="background:#FEF3EE"><span class="swatch-label">50</span><span class="swatch-hex">#FEF3EE</span></div>
+        <div class="swatch on-light" style="background:#FCE6DC"><span class="swatch-label">100</span><span class="swatch-hex">#FCE6DC</span></div>
+        <div class="swatch on-light" style="background:#F5C8B0"><span class="swatch-label">200</span><span class="swatch-hex">#F5C8B0</span></div>
+        <div class="swatch on-light" style="background:#F19C79"><span class="swatch-label">300</span><span class="swatch-hex">#F19C79</span></div>
+        <div class="swatch on-dark" style="background:#E67C50"><span class="swatch-label">400</span><span class="swatch-hex">#E67C50</span></div>
+        <div class="swatch on-dark" style="background:#C0623B"><span class="swatch-label">500</span><span class="swatch-hex">#C0623B</span></div>
+        <div class="swatch on-dark" style="background:#964B2D"><span class="swatch-label">600</span><span class="swatch-hex">#964B2D</span></div>
+      </div>
+      <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);line-height:1.9;">
+        用途：イベントカードのカテゴリ識別タグ（例：「趣味」「グルメ」）、温かみを出したいカード背景。<br>
+        ティールの補色域（コーラル〜ピーチ）に位置し、添付画像のCoral・Golden Yellowに近い色相。
+      </div>
+    </div>
+
+    <!-- Extended — Deep Plum -->
+    <div class="palette-group">
+      <div class="palette-group-title">Extended — Deep Plum <span class="badge badge-plum">深み・特別感</span></div>
+      <div class="palette-row" style="grid-template-columns: repeat(7, 1fr);">
+        <div class="swatch on-light" style="background:#F9EFF2"><span class="swatch-label">50</span><span class="swatch-hex">#F9EFF2</span></div>
+        <div class="swatch on-light" style="background:#EEDAE1"><span class="swatch-label">100</span><span class="swatch-hex">#EEDAE1</span></div>
+        <div class="swatch on-light" style="background:#D9B2BF"><span class="swatch-label">200</span><span class="swatch-hex">#D9B2BF</span></div>
+        <div class="swatch on-light" style="background:#BD7D93"><span class="swatch-label">300</span><span class="swatch-hex">#BD7D93</span></div>
+        <div class="swatch on-dark" style="background:#A63950"><span class="swatch-label">400</span><span class="swatch-hex">#A63950</span></div>
+        <div class="swatch on-dark" style="background:#81293E"><span class="swatch-label">500</span><span class="swatch-hex">#81293E</span></div>
+        <div class="swatch on-dark" style="background:#621E2F"><span class="swatch-label">600</span><span class="swatch-hex">#621E2F</span></div>
+      </div>
+      <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);line-height:1.9;">
+        用途：Accent Pinkよりも落ち着いた深みのある表現。特別イベントのタグ、プレミアム感のある要素。<br>
+        添付画像のRaspberry・Burgundyに近い色相。Pinkの延長として、より大人な雰囲気に。
+      </div>
+    </div>
+
+    <!-- Extended — Indigo Blue -->
+    <div class="palette-group">
+      <div class="palette-group-title">Extended — Indigo Blue <span class="badge badge-indigo">落ち着き・信頼</span></div>
+      <div class="palette-row" style="grid-template-columns: repeat(7, 1fr);">
+        <div class="swatch on-light" style="background:#EEF1F8"><span class="swatch-label">50</span><span class="swatch-hex">#EEF1F8</span></div>
+        <div class="swatch on-light" style="background:#D5DCEE"><span class="swatch-label">100</span><span class="swatch-hex">#D5DCEE</span></div>
+        <div class="swatch on-light" style="background:#A8B5D9"><span class="swatch-label">200</span><span class="swatch-hex">#A8B5D9</span></div>
+        <div class="swatch on-light" style="background:#7B8EC2"><span class="swatch-label">300</span><span class="swatch-hex">#7B8EC2</span></div>
+        <div class="swatch on-dark" style="background:#5570A8"><span class="swatch-label">400</span><span class="swatch-hex">#5570A8</span></div>
+        <div class="swatch on-dark" style="background:#3D5489"><span class="swatch-label">500</span><span class="swatch-hex">#3D5489</span></div>
+        <div class="swatch on-dark" style="background:#2D3E66"><span class="swatch-label">600</span><span class="swatch-hex">#2D3E66</span></div>
+      </div>
+      <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);line-height:1.9;">
+        用途：Info通知、お知らせ、信頼感を示す要素。ティールの類似色相（青寄り）でありつつ、十分な差別化。<br>
+        添付画像のPurple寄りの青。Cool Skyより濃く、落ち着いた印象でティールと自然に共存。
+      </div>
+    </div>
+
+    <!-- Semantic Colors -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">セマンティックカラー（UIステート）</div>
+      <div class="semantic-palette-grid">
+        <!-- Success = Primary Green -->
+        <div class="semantic-palette-card">
+          <div class="semantic-palette-header" style="background:var(--green-600);">
+            ✓ Success — Primary Green 派生
+          </div>
+          <div class="semantic-palette-swatches">
+            <div class="semantic-swatch on-light" style="background:var(--green-50)"><span style="color:var(--green-700);">50</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--green-100)"><span style="color:var(--green-700);">100</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--green-200)"><span style="color:var(--green-700);">200</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--green-400)"><span style="color:#fff;">400</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--green-600)"><span style="color:#fff;">600</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--green-700)"><span style="color:#fff;">700</span></div>
+          </div>
+          <div style="padding:var(--space-sm) var(--space-md);font-size:var(--text-xs);color:var(--neutral-600);">Primaryから派生。新規定義不要。予約完了、送信成功</div>
+        </div>
+
+        <!-- Warning -->
+        <div class="semantic-palette-card">
+          <div class="semantic-palette-header" style="background:var(--warning-500);">
+            ⚠ Warning — 穏やかなアンバー
+          </div>
+          <div class="semantic-palette-swatches">
+            <div class="semantic-swatch on-light" style="background:var(--warning-50)"><span style="color:var(--warning-600);">50</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--warning-100)"><span style="color:var(--warning-600);">100</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--warning-200)"><span style="color:var(--warning-600);">200</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--warning-300)"><span style="color:#fff;">300</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--warning-400)"><span style="color:#fff;">400</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--warning-600)"><span style="color:#fff;">600</span></div>
+          </div>
+          <div style="padding:var(--space-sm) var(--space-md);font-size:var(--text-xs);color:var(--neutral-600);">キャンセルポリシー確認、期限切れ間近</div>
+        </div>
+
+        <!-- Error -->
+        <div class="semantic-palette-card">
+          <div class="semantic-palette-header" style="background:var(--error-500);">
+            ✕ Error — 落ち着いたレッド
+          </div>
+          <div class="semantic-palette-swatches">
+            <div class="semantic-swatch on-light" style="background:var(--error-50)"><span style="color:var(--error-600);">50</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--error-100)"><span style="color:var(--error-600);">100</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--error-200)"><span style="color:var(--error-600);">200</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--error-300)"><span style="color:#fff;">300</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--error-400)"><span style="color:#fff;">400</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--error-600)"><span style="color:#fff;">600</span></div>
+          </div>
+          <div style="padding:var(--space-sm) var(--space-md);font-size:var(--text-xs);color:var(--neutral-600);">入力エラー、年齢確認失敗、決済エラー</div>
+        </div>
+
+        <!-- Info = Indigo -->
+        <div class="semantic-palette-card">
+          <div class="semantic-palette-header" style="background:var(--indigo-500);">
+            ℹ Info — Indigo Blue 派生
+          </div>
+          <div class="semantic-palette-swatches">
+            <div class="semantic-swatch on-light" style="background:var(--indigo-50)"><span style="color:var(--indigo-600);">50</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--indigo-100)"><span style="color:var(--indigo-600);">100</span></div>
+            <div class="semantic-swatch on-light" style="background:var(--indigo-200)"><span style="color:var(--indigo-600);">200</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--indigo-300)"><span style="color:#fff;">300</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--indigo-400)"><span style="color:#fff;">400</span></div>
+            <div class="semantic-swatch on-dark" style="background:var(--indigo-600)"><span style="color:#fff;">600</span></div>
+          </div>
+          <div style="padding:var(--space-sm) var(--space-md);font-size:var(--text-xs);color:var(--neutral-600);">Indigoから派生。ヘルプ情報、お知らせ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Harmony Note -->
+    <div class="info-box" style="margin-top:var(--space-xl);border-left-color:var(--green-300);background:var(--green-50);">
+      <div class="title" style="color:var(--green-700);">カラーハーモニーの設計方針</div>
+      <p>
+        <strong style="color:var(--neutral-800);">Sunset（コーラル）</strong>：ティールの補色域。添付画像のCoral・Golden Yellowに相当。温かみと活気を加える。<br>
+        <strong style="color:var(--neutral-800);">Plum（プラム）</strong>：添付画像のRaspberry・Burgundyに相当。Accent Pinkより深く落ち着いた大人のトーン。<br>
+        <strong style="color:var(--neutral-800);">Indigo（インディゴ）</strong>：添付画像のPurple寄り。Cool Skyより濃く、ティールと同じ寒色系で自然に共存。<br>
+        <strong style="color:var(--neutral-800);">Success</strong>：Primaryの green をそのまま流用し、パレット数を増やさない。<br>
+        <strong style="color:var(--neutral-800);">全体</strong>：彩度を40〜55%に統一し、Primaryのティールと並べても違和感のない落ち着いたトーン。
+      </p>
+    </div>
+
+    <!-- WCAG for semantic -->
+    <div class="a11y-box" style="margin-top:var(--space-lg);">
+      <div class="a11y-title">♿ 拡張カラー コントラスト検証</div>
+      <div class="a11y-grid">
+        <div class="a11y-item" style="background:var(--sunset-50);"><span class="sample" style="color:var(--sunset-600);">Sunset-600 on 50</span><span class="detail a11y-pass">✓ 5.4 : 1</span></div>
+        <div class="a11y-item" style="background:var(--plum-50);"><span class="sample" style="color:var(--plum-600);">Plum-600 on 50</span><span class="detail a11y-pass">✓ 6.8 : 1</span></div>
+        <div class="a11y-item" style="background:var(--indigo-50);"><span class="sample" style="color:var(--indigo-600);">Indigo-600 on 50</span><span class="detail a11y-pass">✓ 7.2 : 1</span></div>
+        <div class="a11y-item" style="background:var(--warning-50);"><span class="sample" style="color:var(--warning-600);">Warning-600 on 50</span><span class="detail a11y-pass">✓ 5.3 : 1</span></div>
+        <div class="a11y-item" style="background:var(--error-400);"><span class="sample" style="color:#fff;">白文字 on Error-400</span><span class="detail" style="color:rgba(255,255,255,.85);">✓ 4.6 : 1</span></div>
+        <div class="a11y-item" style="background:var(--sunset-400);"><span class="sample" style="color:#fff;">白文字 on Sunset-400</span><span class="detail" style="color:rgba(255,255,255,.85);">✓ 3.2 : 1（大テキストAA）</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 11.5 EVENT CARD COLOR USAGE ═══════ -->
+  <section>
+    <div class="section-label">11.5</div>
+    <h2 class="section-title">カラー活用例 — お食事会一覧</h2>
+    <p class="section-desc">拡張カラーを使って、カテゴリごとにイベントカードのタグ色を変えることで、一覧画面での視認性と識別性を高めるイメージ例。</p>
+
+    <div class="event-cards-grid" style="grid-template-columns:1fr;max-width:420px;">
+      <!-- Card 1: ランダム — Primary green -->
+      <div class="event-card">
+        <div class="tags">
+          <span class="tag">ランダム</span>
+          <span class="tag first-time">初めての方歓迎</span>
+        </div>
+        <h3>木曜の夜、5人でごはん</h3>
+        <div class="meta">2月20日（木）19:30〜 ｜ 新宿エリア</div>
+        <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り2席</span></div>
+      </div>
+
+      <!-- Card 2: ランダム — Primary green (same category = same color) -->
+      <div class="event-card">
+        <div class="tags"><span class="tag">ランダム</span></div>
+        <h3>日曜ブランチ、5人で</h3>
+        <div class="meta">2月23日（日）11:30〜 ｜ 中目黒エリア</div>
+        <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り3席</span></div>
+      </div>
+
+      <!-- Card 3: ランダム — Primary green -->
+      <div class="event-card">
+        <div class="tags"><span class="tag">ランダム</span></div>
+        <h3>金曜の夜、5人でごはん</h3>
+        <div class="meta">2月28日（金）19:30〜 ｜ 渋谷エリア</div>
+        <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り4席</span></div>
+      </div>
+
+      <!-- Card 4: タメ会 — Sunset tag -->
+      <div class="event-card">
+        <div class="tags">
+          <span style="padding:3px 10px;font-size:var(--text-xs);font-weight:500;border-radius:var(--radius-full);background:var(--sunset-100);color:var(--sunset-600);">タメ会</span>
+        </div>
+        <h3>30代同世代で土曜ランチ</h3>
+        <div class="meta">3月1日（土）12:00〜 ｜ 渋谷エリア</div>
+        <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り4席</span></div>
+      </div>
+
+      <!-- Card 5: ランダム — Primary green -->
+      <div class="event-card">
+        <div class="tags"><span class="tag">ランダム</span></div>
+        <h3>水曜の夜、5人でごはん</h3>
+        <div class="meta">3月5日（水）19:30〜 ｜ 池袋エリア</div>
+        <div class="bottom"><span class="price">¥1,000</span><span class="seats">残り1席</span></div>
+      </div>
+    </div>
+
+    <!-- Tag Color Legend -->
+    <div style="margin-top:var(--space-lg);padding:var(--space-lg);background:var(--bg-card);border:1px solid var(--green-100);border-radius:var(--radius-lg);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">タグのカラーマッピング例</div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;">
+        <span style="padding:4px 12px;background:var(--green-100);color:var(--green-800);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">ランダム</span>
+        <span style="font-size:var(--text-xs);color:var(--neutral-500);">Primary green — ベーシック</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;margin-top:var(--space-xs);">
+        <span style="padding:4px 12px;background:var(--sunset-100);color:var(--sunset-600);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">タメ会</span>
+        <span style="font-size:var(--text-xs);color:var(--neutral-500);">Sunset — 属性カテゴリ</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;margin-top:var(--space-xs);">
+        <span style="padding:4px 12px;background:var(--plum-100);color:var(--plum-500);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">カミングアウト</span>
+        <span style="font-size:var(--text-xs);color:var(--neutral-500);">Plum — ゲイ独自の興味カテゴリ</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;margin-top:var(--space-xs);">
+        <span style="padding:4px 12px;background:var(--indigo-100);color:var(--indigo-600);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">映画好き</span>
+        <span style="font-size:var(--text-xs);color:var(--neutral-500);">Indigo — 趣味カテゴリ</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;margin-top:var(--space-xs);">
+        <span style="padding:4px 12px;background:var(--pink-100);color:var(--pink-500);font-size:var(--text-xs);border-radius:var(--radius-full);font-weight:500;">初めての方歓迎</span>
+        <span style="font-size:var(--text-xs);color:var(--neutral-500);">Pink — 特別な瞬間のみ</span>
+      </div>
+      <div style="margin-top:var(--space-md);font-size:var(--text-xs);color:var(--neutral-600);line-height:1.9;">
+        ※ カテゴリが増えてもタグ色は上記4系統に収まるよう運用する。むやみに色を増やさない。
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 12 ADDITIONAL COMPONENTS ═══════ -->
+  <section>
+    <div class="section-label">12</div>
+    <h2 class="section-title">追加UIコンポーネント</h2>
+    <p class="section-desc">プロトタイプで使用されているがDesign Systemに未定義だったコンポーネント。M3ガイドラインに準拠。</p>
+
+    <!-- Toast Notifications -->
+    <div style="margin-bottom:var(--space-2xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Toast Notification（トースト通知）</div>
+      <div class="flex flex-col" style="display:flex;flex-direction:column;gap:var(--space-sm);max-width:360px;">
+        <div class="toast toast-success"><span class="toast-icon">✓</span>予約が完了しました</div>
+        <div class="toast toast-warning"><span class="toast-icon">⚠</span>キャンセル期限が近づいています</div>
+        <div class="toast toast-error"><span class="toast-icon">✕</span>決済に失敗しました</div>
+        <div class="toast toast-info"><span class="toast-icon">ℹ</span>新しいお食事会が追加されました</div>
+      </div>
+      <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">※ 画面上部に3秒間表示 → 自動フェードアウト。タップで即時消去。</div>
+    </div>
+
+    <!-- Alert Banners -->
+    <div style="margin-bottom:var(--space-2xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Alert / Banner（アラート）</div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-sm);">
+        <div class="alert alert-success"><span class="alert-title">フィードバックを送信しました</span><br>ご回答ありがとうございます。</div>
+        <div class="alert alert-warning"><span class="alert-title">キャンセル規定のご確認</span><br>3日前以降のキャンセルは返金対象外です。</div>
+        <div class="alert alert-error"><span class="alert-title">年齢確認エラー</span><br>20歳以上である必要があります。</div>
+        <div class="alert alert-info"><span class="alert-title">お知らせ</span><br>2月のお食事会スケジュールが公開されました。</div>
+      </div>
+    </div>
+
+    <div class="components-grid">
+      <!-- Bottom Navigation -->
+      <div class="component-card">
+        <div class="component-label">Bottom Navigation（56px + safe area）</div>
+        <div style="display:flex;justify-content:center;">
+          <div class="bottom-nav" style="box-shadow:var(--shadow-sm);">
+            <button class="bottom-nav-item active"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>ホーム</button>
+            <button class="bottom-nav-item"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>さがす</button>
+            <button class="bottom-nav-item"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>予約</button>
+            <button class="bottom-nav-item"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>マイページ</button>
+          </div>
+        </div>
+        <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">
+          アクティブ: green-600 / 非アクティブ: neutral-400<br>
+          高さ: 56px + env(safe-area-inset-bottom)
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="component-card">
+        <div class="component-label">Avatar / Participant Icon</div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);flex-wrap:wrap;">
+          <div class="avatar avatar-sm" style="background:var(--green-600);">Y</div>
+          <div class="avatar avatar-md" style="background:#3B82F6;">K</div>
+          <div class="avatar avatar-lg" style="background:#A855F7;">T</div>
+          <div class="avatar avatar-xl" style="background:var(--pink-400);">M</div>
+        </div>
+        <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">
+          sm: 32px / md: 40px / lg: 48px / xl: 64px<br>
+          フィードバック画面の参加者アイコンに使用
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress & Steps -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="components-grid">
+        <div class="component-card">
+          <div class="component-label">Progress Bar</div>
+          <div style="margin-bottom:var(--space-md);">
+            <div style="font-size:var(--text-xs);color:var(--neutral-600);margin-bottom:var(--space-xs);">質問 3 / 5</div>
+            <div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%;"></div></div>
+          </div>
+          <div>
+            <div style="font-size:var(--text-xs);color:var(--neutral-600);margin-bottom:var(--space-xs);">完了</div>
+            <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%;background:var(--success-400);"></div></div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-label">Step Indicator（オンボーディング）</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:var(--space-md);">
+            <div class="step-dot completed"></div>
+            <div class="step-line completed"></div>
+            <div class="step-dot completed"></div>
+            <div class="step-line completed"></div>
+            <div class="step-dot active"></div>
+            <div class="step-line"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+          </div>
+          <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">
+            上: 線でつないだステッパー<br>下: ドットのみ（オンボーディング）
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toggle, Checkbox, Radio -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="components-grid">
+        <div class="component-card">
+          <div class="component-label">Toggle Switch</div>
+          <div style="display:flex;align-items:center;gap:var(--space-lg);margin-bottom:var(--space-md);">
+            <div>
+              <button class="toggle-track on" style="pointer-events:none;"><div class="toggle-thumb"></div></button>
+              <div style="font-size:var(--text-xs);color:var(--neutral-600);margin-top:4px;text-align:center;">ON</div>
+            </div>
+            <div>
+              <button class="toggle-track" style="pointer-events:none;"><div class="toggle-thumb"></div></button>
+              <div style="font-size:var(--text-xs);color:var(--neutral-600);margin-top:4px;text-align:center;">OFF</div>
+            </div>
+          </div>
+          <div style="font-size:var(--text-xs);color:var(--neutral-600);">トラック: 48×28px / サム: 24px<br>通知設定・プライバシー設定</div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-label">Checkbox & Radio</div>
+          <div style="margin-bottom:var(--space-md);">
+            <div class="checkbox-row" style="margin-bottom:var(--space-sm);">
+              <div class="checkbox-box checked">✓</div>
+              <span class="checkbox-label">キャンセル規定に同意します</span>
+            </div>
+            <div class="checkbox-row">
+              <div class="checkbox-box"></div>
+              <span class="checkbox-label">お知らせメールを受け取る</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-xs);">
+            <div class="radio-option selected">
+              <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+              クレジットカード
+            </div>
+            <div class="radio-option">
+              <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+              Apple Pay
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rating, Empty State, Skeleton -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="components-grid">
+        <div class="component-card">
+          <div class="component-label">Rating Group（フィードバック）</div>
+          <div class="rating-group" style="max-width:320px;">
+            <div class="rating-btn"><span class="rating-num">1</span>とても悪い</div>
+            <div class="rating-btn"><span class="rating-num">2</span>悪い</div>
+            <div class="rating-btn selected"><span class="rating-num">3</span>普通</div>
+            <div class="rating-btn"><span class="rating-num">4</span>良い</div>
+            <div class="rating-btn"><span class="rating-num">5</span>とても良い</div>
+          </div>
+          <div style="margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--neutral-600);">
+            お食事会の振り返りで使用。選択状態=green-600
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-label">Empty State</div>
+          <div class="empty-state">
+            <div class="empty-state-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="empty-state-title">まだ予約がありません</div>
+            <div class="empty-state-desc">お食事会を探して参加してみましょう</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skeleton, Divider Label, Modal -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="components-grid">
+        <div class="component-card">
+          <div class="component-label">Skeleton Loading</div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-sm);">
+            <div style="display:flex;align-items:center;gap:var(--space-sm);">
+              <div class="skeleton" style="width:40px;height:40px;border-radius:50%;"></div>
+              <div style="flex:1;">
+                <div class="skeleton" style="height:14px;width:60%;margin-bottom:6px;"></div>
+                <div class="skeleton" style="height:10px;width:40%;"></div>
+              </div>
+            </div>
+            <div class="skeleton" style="height:100px;width:100%;border-radius:var(--radius-md);"></div>
+            <div class="skeleton" style="height:12px;width:80%;"></div>
+            <div class="skeleton" style="height:12px;width:50%;"></div>
+          </div>
+        </div>
+
+        <div class="component-card">
+          <div class="component-label">Divider Label ＆ Bottom Sheet Handle</div>
+          <div style="margin-bottom:var(--space-lg);">
+            <div class="divider-label"><span>または</span></div>
+            <div class="divider-label"><span>SNSでログイン</span></div>
+          </div>
+          <div>
+            <div style="font-size:var(--text-xs);color:var(--neutral-600);margin-bottom:var(--space-sm);">Bottom Sheet Handle</div>
+            <div style="background:var(--bg-card);border:1px solid var(--green-100);border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:var(--space-sm) var(--space-lg) var(--space-lg);">
+              <div class="bottom-sheet-handle"></div>
+              <div style="font-size:var(--text-sm);color:var(--neutral-700);font-weight:500;">ボトムシートの内容</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Modal / Overlay</div>
+      <div class="modal-overlay-demo">
+        <div style="position:absolute;top:var(--space-md);left:var(--space-md);z-index:1;font-size:var(--text-xs);color:rgba(255,255,255,0.7);">overlay: rgba(19,26,24,0.45)</div>
+        <div class="modal-demo-sheet">
+          <div class="bottom-sheet-handle"></div>
+          <div style="font-size:var(--text-md);font-weight:500;color:var(--neutral-800);margin-bottom:var(--space-sm);">イベント詳細</div>
+          <div style="font-size:var(--text-sm);color:var(--neutral-600);line-height:1.8;">ボトムシートとオーバーレイの組み合わせ。フィルター・詳細表示に使用。</div>
+          <button class="btn btn-primary btn-block-mobile" style="margin-top:var(--space-md);">参加する</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ 13 COMPONENT-COLOR MAPPING ═══════ -->
+  <section>
+    <div class="section-label">13</div>
+    <h2 class="section-title">カラー × コンポーネント マッピング</h2>
+    <p class="section-desc">各コンポーネントでどのカラーをどの役割に使うかのクイックリファレンス。</p>
+
+    <div class="scale-table-wrap">
+      <table class="scale-table">
+        <thead>
+          <tr><th>コンポーネント</th><th>デフォルト</th><th>Success</th><th>Warning</th><th>Error</th><th>Info</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Button (Primary)</td>
+            <td style="color:var(--green-600);">green-600</td>
+            <td style="color:var(--success-500);">success-500</td>
+            <td>—</td>
+            <td style="color:var(--error-400);">error-400</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Toast / Alert BG</td>
+            <td>—</td>
+            <td style="color:var(--success-500);">success-50</td>
+            <td style="color:var(--warning-500);">warning-50</td>
+            <td style="color:var(--error-500);">error-50</td>
+            <td style="color:var(--info-500);">info-50</td>
+          </tr>
+          <tr>
+            <td>Toast / Alert Border</td>
+            <td>—</td>
+            <td style="color:var(--success-400);">success-200</td>
+            <td style="color:var(--warning-400);">warning-200</td>
+            <td style="color:var(--error-400);">error-200</td>
+            <td style="color:var(--info-400);">info-200</td>
+          </tr>
+          <tr>
+            <td>Toast / Alert Text</td>
+            <td>—</td>
+            <td style="color:var(--success-600);">success-600</td>
+            <td style="color:var(--warning-600);">warning-600</td>
+            <td style="color:var(--error-600);">error-600</td>
+            <td style="color:var(--info-600);">info-600</td>
+          </tr>
+          <tr>
+            <td>Badge BG</td>
+            <td style="color:var(--green-600);">green-100</td>
+            <td style="color:var(--success-500);">success-100</td>
+            <td style="color:var(--warning-500);">warning-100</td>
+            <td style="color:var(--error-500);">error-100</td>
+            <td style="color:var(--info-500);">info-100</td>
+          </tr>
+          <tr>
+            <td>Input Error</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td style="color:var(--error-400);">error-400 border, error-50 bg</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td colspan="5" style="color:var(--neutral-400);">bg: neutral-200 / fg: neutral-400</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Semantic Alias Reference -->
+    <div style="margin-top:var(--space-xl);">
+      <div class="component-label" style="margin-bottom:var(--space-md);">Semantic Alias 変数リファレンス</div>
+      <div class="code-block">
+        <pre><span class="code-comment">/* SakuraCo v4 — Semantic & Tertiary Tokens */</span>
+
+<span class="code-comment">/* Tertiary — Warm Sand */</span>
+<span class="code-prop">--sand-50</span>:  <span class="code-val">#FAF7F2</span>;  <span class="code-prop">--sand-100</span>: <span class="code-val">#F0EBE0</span>;
+<span class="code-prop">--sand-200</span>: <span class="code-val">#E2D9C8</span>;  <span class="code-prop">--sand-300</span>: <span class="code-val">#CCBFA8</span>;
+<span class="code-prop">--sand-400</span>: <span class="code-val">#B0A48A</span>;  <span class="code-prop">--sand-500</span>: <span class="code-val">#938A72</span>;
+<span class="code-prop">--sand-600</span>: <span class="code-val">#75705E</span>;
+
+<span class="code-comment">/* Success — 落ち着いたグリーン（HSL 135° / S 38%） */</span>
+<span class="code-prop">--success-50</span>:  <span class="code-val">#EFF6F0</span>;  <span class="code-prop">--success-100</span>: <span class="code-val">#D0E8D3</span>;
+<span class="code-prop">--success-400</span>: <span class="code-val">#4A9955</span>;  <span class="code-prop">--success-600</span>: <span class="code-val">#2A5E33</span>;
+
+<span class="code-comment">/* Warning — 穏やかなアンバー（HSL 38° / S 52%） */</span>
+<span class="code-prop">--warning-50</span>:  <span class="code-val">#FEF7EC</span>;  <span class="code-prop">--warning-100</span>: <span class="code-val">#FCEACC</span>;
+<span class="code-prop">--warning-400</span>: <span class="code-val">#D9A040</span>;  <span class="code-prop">--warning-600</span>: <span class="code-val">#8C6823</span>;
+
+<span class="code-comment">/* Error — 落ち着いたレッド（HSL 0° / S 45%） */</span>
+<span class="code-prop">--error-50</span>:  <span class="code-val">#FDF2F2</span>;   <span class="code-prop">--error-100</span>: <span class="code-val">#F9DADA</span>;
+<span class="code-prop">--error-400</span>: <span class="code-val">#CC5555</span>;   <span class="code-prop">--error-600</span>: <span class="code-val">#832D2D</span>;
+
+<span class="code-comment">/* Info — 静かなブルー（HSL 208° / S 42%） */</span>
+<span class="code-prop">--info-50</span>:  <span class="code-val">#EFF5FA</span>;    <span class="code-prop">--info-100</span>: <span class="code-val">#D4E5F2</span>;
+<span class="code-prop">--info-400</span>: <span class="code-val">#5592BB</span>;    <span class="code-prop">--info-600</span>: <span class="code-val">#2D5977</span>;
+
+<span class="code-comment">/* Semantic Aliases */</span>
+<span class="code-prop">--disabled</span>: <span class="code-val">var(--neutral-200)</span>;
+<span class="code-prop">--disabled-foreground</span>: <span class="code-val">var(--neutral-400)</span>;
+<span class="code-prop">--focus-ring</span>: <span class="code-val">rgba(29, 140, 126, 0.18)</span>;
+<span class="code-prop">--overlay</span>: <span class="code-val">rgba(19, 26, 24, 0.45)</span>;
+<span class="code-prop">--divider</span>: <span class="code-val">var(--neutral-200)</span>;
+
+<span class="code-comment">/* Spacing Aliases（コンポーネント互換） */</span>
+<span class="code-prop">--spacing-xs</span>: <span class="code-val">var(--space-xs)</span>;
+<span class="code-prop">--spacing-md</span>: <span class="code-val">var(--space-md)</span>;
+<span class="code-prop">--spacing-lg</span>: <span class="code-val">var(--space-lg)</span>;
+<span class="code-prop">--spacing-xl</span>: <span class="code-val">var(--space-xl)</span>;
+<span class="code-prop">--spacing-2xl</span>: <span class="code-val">var(--space-2xl)</span>;</pre>
+      </div>
     </div>
   </section>
 

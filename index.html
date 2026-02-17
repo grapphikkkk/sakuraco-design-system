@@ -1,3 +1,581 @@
+
+My App Project
+/
+意図が違います。以下のことを念頭にもう一度作り直してください
+・sakuraco_tonmana_v3.htmlに定義された文章やすべてのパーツはそのまま残す形で勝手に消さず、新しいものを追加してほしい意図でした。
+・Semantic Colorsで定義された色がPrimaryやAccentと合いません。明度や彩度が強すぎます。明度や彩度をPrimaryのブルーグリーンや Accentのピンクと相性に合った色をウェブなどから探し、定義してください
+
+2月15日
+Let me first read the uploaded file to understand the current state, then research color harmonies.
+
+
+3個のコマンドを実行しました
+ファイルがアップロードフォルダに見つかりませんでした。ただ、会話のコンテキストにファイルの内容が含まれているはずなので、確認させてください。ファイルの内容がコンテキストに表示されていないようです。
+
+もう一度 sakuraco_tonmana_v3.html をアップロードしていただけますか？ファイルの内容を正確に把握した上で、以下の方針で作業します：
+
+既存のすべてのパーツ・文章を一切削除せず保持
+Semantic Colorsの色を、PrimaryのブルーグリーンやAccentのピンクと調和する明度・彩度に調整 — ウェブで相性の良いカラーパレットをリサーチします
+ファイルを再アップロードお願いします！
+
+
+sakuraco_tonmana_v3.html
+html
+
+
+01_04_Event_detail_01.tsx
+tsx
+
+
+02_04_Event_detail_03.tsx
+tsx
+
+
+PersonalityQuestions.tsx
+tsx
+
+1771165604754_image.png
+
+App.tsx
+7行
+
+tsx
+
+
+routes.ts
+92行
+
+ts
+
+
+00_01_HomeBeforeLogin.tsx
+99行
+
+tsx
+
+
+00_02_AccountCreation.tsx
+350行
+
+tsx
+
+
+01_01_Home_afterlogin_01.tsx
+358行
+
+tsx
+
+
+01_01_Home_afterlogin_02.tsx
+281行
+
+tsx
+
+
+01_02_Onboarding.tsx
+180行
+
+tsx
+
+
+01_05_Payment.tsx
+420行
+
+tsx
+
+
+03_01_Feedback.tsx
+416行
+
+tsx
+
+
+03_02_Connection_Result.tsx
+237行
+
+tsx
+
+
+04_01_Home_afterlogin_01.tsx
+255行
+
+tsx
+
+
+04_02_Event_detail_01.tsx
+15行
+
+tsx
+
+
+HomeAfterLogin.tsx
+24行
+
+tsx
+
+
+MyPage.tsx
+128行
+
+tsx
+
+
+Reservations.tsx
+278行
+
+tsx
+
+あなたは優秀なデザイナー兼エンジニアです。私はプロダクトUXデザイナーです。 今ゲイ男性向け出会いプラットフォーム（SakuraCo）を開発しています。 それにあたり、事前に添付のDesign System（sakuraco_tonmana_v3.html）を作成しました。 しかし、画面要件を表現するためにはカラーとコンポーネントが足りません。 こちらに今の状況を記します。 いくつかカラーとコンポーネントを追加したいです。sakuraco_tonmana_v3.htmlのファイルを修正・追加する形で、Design Systemを更新してください
+今の状況
+ ・基本的には添付のDesign System（sakuraco_tonmana_v3.html）に基づき、ウェブアプリのプロトタイプを作成している ・Figma Makeでプロトタイプを作成しているが、Design Systemに定義されていないコンポーネントも勝手に作成してしまっている状況なので、それらはきちんとDesign Systemに定義をしたい。 
+・カラーパターンの定義のバリエーションが少なく、表現の幅が狭い。ただし、むやみにカラーを増やすのではなく、今の基本カラーに合ったサブ要素としてのカラーをいくつか定義したい。 
+・現在作成中のプロトタイプも添付したのでそれらのコードを参照した上で提案してほしい。 
+・コンポーネントの種類やカラーの定義は以下Googleのマテリアルデザインなどを参考にしてほしい
+・sakuraco_tonmana_v3.htmlに定義された文章やすべてのパーツはそのまま残す形で勝手に消さず、新しいものを追加してほしい意図
+・Primaryのブルーグリーンや Accentのピンクと相性に合った色をウェブなどから探し、定義してください __https://m3.material.io/components__
+
+もっと表示
+2月15日
+まず、現在のsakuraco_tonmana_v3.htmlの内容を完全に把握し、フロントエンドデザインスキルを確認してから作業します。
+
+
+3個のファイルを表示しました, コマンドを実行しました
+Now let me see the truncated lines 664-797:
+
+
+Read truncated color/typography sections
+Now let me read the frontend design skill and research color harmonies for teal/blue-green + pink:
+
+
+Read frontend design skill
+Now let me search for color harmonies that work well with teal/blue-green and pink:
+
+
+ウェブを検索しました
+
+Now let me search for Material Design 3 semantic color patterns and specific muted tones:
+
+
+ウェブを検索しました
+
+Now I have comprehensive understanding of the requirements. Let me build the updated design system HTML. I'll carefully preserve all existing content and add new sections for semantic colors, additional components, and M3-inspired patterns.
+
+
+Copy original file to working directory
+Now I'll carefully add the new CSS tokens, styles, and HTML sections. First, add new color tokens to the CSS :root:
+
+
+2個のファイルを編集しました
+Now add new component CSS styles before the closing </style> tag:
+
+
+Add new component CSS styles for all the missing components found in the prototype code
+Now update the header version label:
+
+
+Update version label in hero
+Now add new sections AFTER the existing section 10 (CSS Reference) — the new Semantic Colors, Tertiary Color, and Additional Components sections:
+
+
+Add new sections 11-13 after the existing section 10 CSS Reference, before closing div/body/html
+Now verify the file is valid and copy to outputs:
+
+
+2個のコマンドを実行しました
+All 10 original sections (01-10) preserved, 3 new sections (11-13) added. Let me copy to outputs and present:
+
+
+コマンドを実行しました, ファイルを読み取りました
+完成しました。v3のすべてのパーツ・文章を保持した上で、以下を追加しています。
+
+新規カラー（Section 11）
+
+Tertiary — Warm Sand（7色）：ティールの補色域（暖色30°付近）から取った温もりのあるベージュ系。カテゴリタグやサブ要素に使用。
+
+Semantic Colors（各6色、計24色） — Primaryのティールと並べて違和感が出ないよう、彩度を通常のUIカラーより30〜40%低く抑えています：
+
+Success — HSL 135°/S38%、落ち着いたグリーン（予約完了等）
+Warning — HSL 38°/S52%、穏やかなアンバー（キャンセル確認等）
+Error — HSL 0°/S45%、落ち着いたレッド（入力エラー等）
+Info — HSL 208°/S42%、静かなブルー（お知らせ等）
+新規コンポーネント（Section 12）：Toast通知、Alert/Banner、Bottom Navigation、Avatar（4サイズ）、Progress Bar、Step Indicator、Toggle Switch、Checkbox/Radio、Rating Group、Empty State、Skeleton Loading、Divider Label、Bottom Sheet Handle、Modal Overlay
+
+カラー×コンポーネント マッピング表（Section 13）：各コンポーネントでどの色をどう使うかのクイックリファレンスと、CSSコードブロック。
+
+また、プロトタイプで使われている --spacing-* や --disabled、--red-500 等のエイリアス変数も追加したので、既存コードとの互換性も確保しています。
+
+Sakuraco tonmana v4
+コード · HTML 
+ありがとうございます。以下修正してください
+1UIコンポーネントに定義されている「マッチ」という言葉はトーン&マナーに合わないので他の言葉にしてください
+
+2セマンティックカラー & 第三カラーともにPrimaryに合わないと思います。Successの緑は確かに必要ですが、Primaryも緑系なので新たに定義するのではなく、Primaryの中からはいかがでしょうか。
+第三カラーのTertiary — Warm Sandの使いどころのイメージがわきません。以下も参考にして、これらのカラーはいかがでしょうか?1つだけでなくてもよいです。Cool Skyはもしかしたら相性が合わず、もう少し濃い目の青がよいかもしれません。添付の画像も参考にして相性の合う色を再提案してください。
+/* ================================
+     1 Warm Sunset
+     ================================ */
+  --sunset-100: 
+#FCE6DC;
+  --sunset-300: 
+#F19C79;
+  --sunset-400: 
+#E67C50;
+  /* ================================
+     2 Cool Sky
+     ================================ */
+  --sky-100: 
+#D7EBF9;
+  --sky-300: 
+#74C7EA;
+  --sky-400: 
+#4ABDE2;
+  /* ================================
+     3 Deep Plum
+     ================================ */
+  --plum-500: 
+#A63950;
+  --plum-600: 
+#81293E;
+
+4お食事会一覧画面ではモバイルの画面でEVENT CARDが複数並ぶことがありますが、これらの第三カラーをつかって、例えばタグの色を変えたりしして、実際のEVENT CARDなどのコンポーネントを使い、使い方のイメージ例を示してください。
+例えば、
+・ランダム
+・ランダム
+・ランダム
+・タメ会
+・ランダム
+5Bottom Navigationの各アイコンですが、イラストがトーン&マナーに合わないと思います。目立つ必要のないものなので、もともとのグレーの線タイプのシンプルなアイコンでよいと思います。同じく、Empty Stateで使われているものも同様です。
+
+表示を減らす
+0:03
+しっかり読み込んで、的確なフィードバックに対応しますね。まず前回のファイルを確認し、各ポイントを修正します。
+
+
+ファイルを表示しました, コマンドを実行しました
+Good — only one occurrence, and it's already in the "Don't say" section, which is correct. Let me also check what the original v3 had:
+
+
+2個のコマンドを実行しました
+Wait — the original v3 had 6 occurrences of マッチ but v4 only has 1. Let me check if those lines still exist in v4:
+
+
+Check that original content is preserved
+Good — the v4 already had マッチ replaced with つながり in those locations (from the previous generation). Now the remaining issue is user feedback item 1 is already handled. Let me verify the notification badge label:
+
+
+コマンドを実行しました, ファイルを表示しました
+Good, already "つながり". Now let me also check the Voice & Tone Don't say section and the pink usage rule:
+
+
+2個のファイルを表示しました
+Good, item 1 is already handled. Now let me tackle the major changes: colors and components. Let me look at the current semantic/tertiary sections and the bottom nav/empty state areas:
+
+
+See current semantic colors CSS tokens area
+I see the file was already modified with Sunset/Plum/Indigo in a prior iteration. Let me now check the full current state of the HTML sections 11-13:
+
+
+Check current section 11 HTML
+Now let me check the rest of the sections and the bottom nav/empty state:
+
+
+Check bottom nav and empty state HTML
+Good — I can see the bottom nav already uses SVG line icons (from the earlier iteration). Let me check the empty state:
+
+
+Find empty state occurrences
+Now I understand the full picture. The user wants:
+
+マッチ → already done in previous iteration
+Success should use Primary green, not new green; remove Sand; keep Sunset/Plum/Indigo but reassess Indigo color — already partially done in previous iteration, just need to verify
+Check if Indigo blue works well or needs adjustment — user suggested Cool Sky might need to be darker. The current Indigo looks reasonable.
+Event card examples showing tags using the extended colors — already done in previous iteration
+Bottom Nav icons should be simple line SVGs (already done), Empty State icon should also be line type not emoji
+Let me check what needs actual changes vs what's already good:
+
+
+Check event card examples section
+The file is already in a pretty good state from a previous iteration. Now I need to:
+
+Fix the Empty State emoji icon → SVG line icon
+Double-check the Voice & Tone Don't section still has the original マッチング text (it's in the "Don't say" list, which is correct — it should stay as an example of what NOT to say, but could use the "→ つながりを使う" note)
+Any remaining issues
+Let me now fix the empty state icon:
+
+
+Replace emoji calendar icon in Empty State with SVG line icon
+Now let me also update the empty state icon CSS to work better with SVG:
+
+
+Update empty state icon styling for SVG compatibility
+Now let me verify there are no remaining emoji icons in component areas that should be line SVGs. Check toasts:
+
+
+Check toast icons - these are small single-char symbols which is acceptable
+The toast icons use simple Unicode symbols (✓, ⚠, ✕, ℹ) which are fine as they're standard symbolic characters, not colorful emojis. Now let me verify the final file is complete and correct:
+
+
+Final verification
+No emojis remaining in components, and the only マッチ occurrence is in the "Don't say" example which is correct. Let me also check there are no other emoji icons I missed:
+
+
+Check for mobile emoji in section title
+That emoji is in the original v3 section title — it's part of the original content and should be preserved. Now copy final version to outputs:
+
+
+コマンドを実行しました, ファイルを読み取りました
+修正完了しました。変更点をまとめます：
+
+1. 「マッチ」→「つながり」 前回の反映で既に全箇所対応済み。Voice & Toneの「こう言わない」リストでは原文を残しつつ「→つながりを使う」の注記付きにしています。
+
+2. セマンティックカラーの再設計
+
+Success → Primaryのgreenスケールをそのままvar(--green-*)で流用。新色を定義せず、パレット増加を防止
+Info → Cool Skyではなく、より濃いIndigo Blue（
+#5570A8〜
+#2D3E66）を採用。添付画像のPurple寄りの落ち着いた青で、ティールとの距離感がちょうど良い
+Warm Sandは削除 → 代わりにWarm Sunset（コーラル系）を追加。添付画像のCoralに相当し、タグ色としてすぐ使えるイメージが湧きやすい
+Deep Plum → 添付画像のRaspberry/Burgundyに対応。Accent Pinkより大人な深みのある表現に
+3. カラー活用例（Section 11.5） Event Cardを5枚並べたモバイル一覧イメージ：ランダム→ランダム→ランダム→タメ会→ランダム。タグ色だけでカテゴリが視覚的に区別できる実例を示しています。
+
+4. Empty Stateのアイコン 絵文字（📅）→ SVGの線画カレンダーアイコンに変更。Bottom Navと同じくstroke-width 1.5の統一トーンです。
+
+5. Bottom Navigation 前回の反映で既にSVG線画アイコンに対応済み。neutral-400のストロークで、アクティブ時のみgreen-600に変わります。
+
+Sakuraco tonmana v4
+コード · HTML 
+Ok, 追加UIコンポーネントに、以下の要素を追加してください。その他の要素は一切変更しないでください
+
+自分の体型に当てはまるイラスト選択
+・以下からイラスト付きでカード形式で選択
+・イラストのテイストはアイコンと同様のグレー線で表現
+ガチムチ/ぽっちゃり/マッスル/アスリート/スジ筋/普通体型/スリム
+
+11:06
+まず現在のファイルの追加UIコンポーネントセクション（Section 12）の構造を確認します。
+
+
+Check section 12 structure to find where to insert the new component
+Now find the end of section 12 to know where to insert:
+
+
+コマンドを実行しました, ファイルを表示しました
+Now I'll add the body type selector component CSS and HTML. First add the CSS:
+
+
+2個のファイルを表示しました, コマンドを実行しました
+Now add the body type selector CSS and HTML:
+
+
+Add body type card selector CSS before closing style tag
+Now add the HTML component before the closing of section 12 (before the Modal/Overlay which is the last item):
+
+
+Add Body Type Selector component HTML inside section 12, before Modal/Overlay
+Verify the file is intact and nothing else was changed:
+
+
+Verify file integrity - all sections present, body type added
+7つの体型すべて揃っており、既存セクションも全てそのまま。コピーして出力します。
+
+
+コマンドを実行しました, ファイルを読み取りました
+Section 12「追加UIコンポーネント」に Body Type Selector（体型選択カード） を追加しました。
+
+仕様：
+
+7種のカード：ガチムチ / ぽっちゃり / マッスル / アスリート / スジ筋 / 普通体型 / スリム
+各カードにSVGシルエットイラスト付き。stroke-width 1.4 / neutral-400のグレー線で、Bottom NavやEmpty Stateと同じテイスト
+体型の差異を肩幅・胴回り・腕の太さ・腹部の筋線の有無で表現
+3列グリッド（モバイル）、500px以上で4列に展開
+選択状態はgreen-600塗り＋白アイコン・白文字（「マッスル」で例示）
+未選択はneutral-300ボーダー＋白背景
+その他の要素は一切変更していません。
+
+Sakuraco tonmana v4
+コード · HTML 
+1771294544321_image.png
+イラストのテイストだが、これにしてください。
+一番ひだりから番号を振ると
+①ガチムチ
+②アスリート
+③普通体型
+⑤ぽっちゃり
+⑥スリム
+
+並び順は
+①⑤②③⑥
+
+※５つにする
+※④は削除
+
+11:17
+画像をよく確認して、各体型のシルエットの特徴を正確に再現します。
+
+
+2個のファイルを表示しました
+Now I'll also check the CSS for the bodytype grid to update columns for 5 items:
+
+
+Check bodytype CSS
+Now I need to: update the CSS grid to work well with 5 items, increase SVG size to better match the reference image style, and completely rewrite the SVGs to match the reference image's filled-silhouette-with-shorts style. Let me study the image carefully:
+
+The reference image shows:
+
+Body silhouettes with a filled light gray body area (not just outlines)
+Dark gray shorts/underwear area filled solid
+Thin outline stroke around the body
+Head is a circle outline
+Arms slightly away from body
+Feet/shoes visible
+Each body type has distinct proportions
+Let me update both CSS and HTML:
+
+
+Update bodytype CSS for 5 items, larger cards matching reference image style
+Now replace the entire body type HTML section with 5 items, new SVGs matching the reference, and correct order (①ガチムチ ⑤ぽっちゃり ②アスリート ③普通体型 ⑥スリム):
+
+
+Replace body type HTML with 5 items, reference-image-matching SVG silhouettes, correct order
+理解しました。画像を改めてよく観察して、各体型の特徴を正確にSVGで再現します。
+
+まず現在のファイル状態を確認します。
+
+
+コマンドを実行しました, ファイルを表示しました
+画像を再度よく観察します。参考画像の特徴：
+
+①ガチムチ: 非常に幅広い肩、厚い胴体、お腹がベルトの上に少しはみ出す感じ、太い腕と脚
+②アスリート: 広い肩、V字のウエスト、胸と腹筋の線が見える、引き締まった体
+③普通体型: 中間的、特に特徴なし、やや細身寄り
+⑤ぽっちゃり（画像の5番目、緑背景）: 一番大きい、お腹が大きく丸い、非常にワイド、脚も太め
+⑥スリム: 細い肩、スレンダーな体、長い手足
+現在のSVGは概ね合っていますが、画像により忠実にするために細部を調整します。特にぽっちゃりをもっと大きく丸く、ガチムチの筋肉質な厚みを強調し、全体のプロポーションを画像に近づけます。
+
+
+ファイルを編集しました, コマンドを実行しました
+5種類、正しい順序（①ガチムチ → ⑤ぽっちゃり → ②アスリート → ③普通体型 → ⑥スリム）で配置。他のセクションも問題なし。
+
+
+コマンドを実行しました, ファイルを読み取りました
+修正しました。変更点：
+
+5種類に絞り、並び順を指定通りに： ガチムチ → ぽっちゃり → アスリート → 普通体型 → スリム（マッスル・スジ筋を削除）
+
+イラストを参考画像のテイストに合わせて再制作：
+
+薄いグレー塗り（neutral-200）のボディ＋グレー線（neutral-400）のアウトライン
+ダークグレー（neutral-500）のショーツと靴
+ガチムチ①：最も幅広い肩と厚い四角い胴体、太い腕脚
+ぽっちゃり⑤：一番大きな丸いお腹が突出、全体的にワイド（選択状態で表示）
+アスリート②：広い肩からV字に絞れたウエスト、胸筋・腹筋の線あり
+普通体型③：中間的でフラットな標準シルエット
+スリム⑥：狭い肩、細い胴体と手足
+グリッドは500px以上で5列横並びになります。その他の要素は一切変更していません。
+
+Sakuraco tonmana v4
+コード · HTML 
+1771297163547_image.png
+UIがかなり変なものになっています。イラストは正確に添付のものにしてください。前に命令した線での描画タイプよりも、この添付を忠実に再現することを最優先してください。
+左から
+①ぽっちゃり
+②ガチムチ
+③アスリート
+④普通体型
+⑤スリム
+です
+
+12:01
+画像を詳細に分析して、各体型の特徴を正確に把握します。
+
+①ぽっちゃり: 大きな丸い体、お腹が前に出てショーツの上に乗っている、肩幅は広いが丸みがある、太い脚、腕は体の横にまっすぐ下ろしている ②ガチムチ: 腰に手を当てたポーズ、筋肉質で厚みがある、腹筋の線がうっすら見える、肩幅が広い、脚が開いている ③アスリート: 一番筋肉質、6パックの腹筋が明確、V字体型、広い肩、腕が体から離れている ④普通体型: 中間的な体型、特に筋肉の線はない、自然な体型、腕はまっすぐ下ろしている ⑤スリム: 一番細い、狭い肩幅、細い腕と脚、全体的に華奢
+
+全て共通: グレーのアウトライン線画、頭は丸い円、ダークグレーのボクサーパンツ、体の塗りは白/非常に薄いグレー
+
+これはSVGの線画で正確に再現する必要があります。前回の「面塗り」スタイルではなく、参考画像のように輪郭線のみで体を表現し、ショーツだけをダークグレーで塗りつぶすスタイルです。
+
+
+Check current CSS for bodytype to understand what to modify
+Now let me update the CSS to match the reference style (outline-only body, no fill on body, only shorts filled) and then completely redo the SVGs:
+
+
+Update CSS to match reference image style - outline body, filled shorts only, larger icon area
+Now replace the entire body type HTML with completely new SVGs faithfully reproducing the reference image. Each SVG will use CSS variables for colors so the selected state works:
+
+
+2個のファイルを表示しました, コマンドを実行しました
+Now I'll replace the entire body type section with carefully crafted SVGs that faithfully reproduce the reference image:
+
+
+4個のコマンドを実行しました, ファイルを編集しました, ファイルを表示しました
+Good — 普通体型 is the selected card (④). Now copy and output:
+
+
+コマンドを実行しました, ファイルを読み取りました
+添付画像に忠実に再制作しました。変更点：
+
+描画スタイルを完全変更：
+
+面塗りスタイル → **輪郭線のみ（fill:none）**のアウトライン描画
+ボクサーパンツだけダークグレー（
+#4B5563）で塗りつぶし
+線色は 
+#6B7280、stroke-width 1.3〜1.6
+5体型を画像通りの特徴で再現：
+
+①ぽっちゃり — お腹がショーツの上に丸く乗る、おへその点、太い脚、腕はまっすぐ下ろす
+②ガチムチ — 腰に手を当てたポーズ、脚を開く、うっすら腹筋線、厚みのある体
+③アスリート — 最もワイドなV字体型、明確な6パック腹筋と胸筋線、腕が体から離れる
+④普通体型 — 標準的な直線シルエット、うっすら胸ライン、腕は自然に下ろす（selected状態で表示）
+⑤スリム — 最も細い肩幅、華奢な腕脚、コンパクトなシルエット
+並び順： ぽっちゃり → ガチムチ → アスリート → 普通体型 → スリム
+
+SVGサイズも76×108に拡大し、カード内で大きく表示されるようにしています。選択状態では --ln と --sh のCSS変数が白系に切り替わります。
+
+Sakuraco tonmana v4
+コード · HTML 
+ちょっと全然違うので、イラスト部分はＳＶＧではなく、ＰＮＧの画像を挿入で切るようにしてもらえますか？そのサイズで画像を提供しますので。
+
+12:07
+了解です。SVGイラストをやめて、PNG画像を<img>で差し込む形に変更します。
+
+
+2個のファイルを表示しました, コマンドを実行しました
+Now update CSS and HTML — simplify to use <img> tags with placeholder paths:
+
+
+Simplify CSS for PNG image-based body type cards
+Now replace the HTML body type section with simple <img> tags:
+
+
+3個のファイルを表示しました, 3個のコマンドを実行しました, ファイルを編集しました
+SVGを全て削除し、PNG画像の <img> タグに置き換えました。
+
+画像ファイル仕様：
+
+ファイル名	体型
+img/bodytype_chubby.png	ぽっちゃり
+img/bodytype_stocky.png	ガチムチ
+img/bodytype_athletic.png	アスリート
+img/bodytype_average.png	普通体型
+img/bodytype_slim.png	スリム
+推奨画像サイズ： 80×110px（@2x Retinaなら160×220px）、背景透過PNG
+
+選択状態の処理： CSSの filter: brightness(0) invert(1) でグレーの線画が白に反転します。そのため、背景透過のグレー線画PNGを用意いただければ、選択時は自動的に白イラスト＋green-600背景になります。
+
+画像を用意されたら、上記のパスに配置してください。
+
+Sakuraco tonmana v4
+コード · HTML 
+
+
+
+
+
+Claude は AI のため、誤りを含む可能性があります。回答内容は必ずご確認ください。
+Sakuraco tonmana v4 · HTML
+コピー
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -984,22 +1562,22 @@ section { margin-bottom: var(--space-3xl); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-sm);
-  max-width: 480px;
+  max-width: 520px;
 }
-@media (min-width: 500px) {
+@media (min-width: 540px) {
   .bodytype-grid { grid-template-columns: repeat(5, 1fr); }
 }
 .bodytype-card {
   display: flex; flex-direction: column;
-  align-items: center; gap: 6px;
-  padding: var(--space-md) var(--space-xs) var(--space-sm);
+  align-items: center; gap: 4px;
+  padding: var(--space-sm) 4px var(--space-xs);
   border-radius: var(--radius-md);
   border: 1.5px solid var(--neutral-200);
   background: #fff;
   cursor: pointer; transition: all 0.2s;
   -webkit-tap-highlight-color: transparent;
-  min-height: 130px;
-  justify-content: center;
+  min-height: 140px;
+  justify-content: flex-end;
 }
 .bodytype-card:hover { border-color: var(--green-400); }
 .bodytype-card.selected {
@@ -1007,18 +1585,14 @@ section { margin-bottom: var(--space-3xl); }
   background: var(--green-600);
 }
 .bodytype-card .bt-icon {
-  width: 56px; height: 80px;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
+  width: 80px; height: 110px;
+  display: flex; align-items: flex-end; justify-content: center;
 }
-.bodytype-card .bt-icon svg .body-fill { fill: var(--neutral-200); }
-.bodytype-card .bt-icon svg .body-stroke { stroke: var(--neutral-400); fill: none; }
-.bodytype-card .bt-icon svg .shorts-fill { fill: var(--neutral-500); }
-.bodytype-card .bt-icon svg .head-stroke { stroke: var(--neutral-400); fill: var(--neutral-200); }
-.bodytype-card.selected .bt-icon svg .body-fill { fill: rgba(255,255,255,0.35); }
-.bodytype-card.selected .bt-icon svg .body-stroke { stroke: rgba(255,255,255,0.7); }
-.bodytype-card.selected .bt-icon svg .shorts-fill { fill: rgba(255,255,255,0.75); }
-.bodytype-card.selected .bt-icon svg .head-stroke { stroke: rgba(255,255,255,0.7); fill: rgba(255,255,255,0.35); }
+.bodytype-card .bt-icon img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;
+}
+.bodytype-card.selected .bt-icon img { filter: brightness(0) invert(1); opacity: 0.9; }
 .bodytype-card .bt-label {
   font-size: var(--text-xs); font-weight: 500;
   color: var(--neutral-700); transition: color 0.2s;
@@ -2002,170 +2576,40 @@ section { margin-bottom: var(--space-3xl); }
     <div style="margin-top:var(--space-xl);">
       <div class="component-label" style="margin-bottom:var(--space-md);">Body Type Selector（体型選択カード）</div>
       <p style="font-size:var(--text-sm);color:var(--neutral-600);line-height:1.8;margin-bottom:var(--space-md);">
-        オンボーディングで自分の体型を選ぶUI。薄いグレー塗り＋グレー線のシルエット、ダークグレーのショーツ。選択時はgreen-600背景。
+        オンボーディングで自分の体型を選ぶUI。PNGイラスト＋ラベルのカード形式。選択時はgreen-600背景、イラストは白反転。
       </p>
       <div class="bodytype-grid">
 
-        <!-- ① ガチムチ — 広い肩幅・厚い四角い胴・太い腕脚・腹がショーツ上に乗る -->
         <div class="bodytype-card">
-          <div class="bt-icon">
-            <svg width="56" height="78" viewBox="0 0 56 78" fill="none">
-              <!-- head -->
-              <circle class="head-stroke" cx="28" cy="7.5" r="5.8" stroke-width="1.4"/>
-              <!-- torso - wide square build, belly overhangs -->
-              <path class="body-fill" d="M8 23c0-5.5 7.5-9 20-9s20 3.5 20 9l0 12c0 2 .5 4 .5 6 0 2-1 3-3 3H10.5c-2 0-3-1-3-3 0-2 .5-4 .5-6l0-12z"/>
-              <path class="body-stroke" d="M8 23c0-5.5 7.5-9 20-9s20 3.5 20 9l0 12c0 2 .5 4 .5 6 0 2-1 3-3 3H10.5c-2 0-3-1-3-3 0-2 .5-4 .5-6l0-12z" stroke-width="1.3"/>
-              <!-- arms -->
-              <path class="body-fill" d="M8 23H3.5c-.6 0-1 .4-1 .9L4.5 39c.1.5.5.9 1 .9H9"/>
-              <path class="body-stroke" d="M8 23H3.5c-.6 0-1 .4-1 .9L4.5 39c.1.5.5.9 1 .9H9" stroke-width="1.3"/>
-              <path class="body-fill" d="M48 23h4.5c.6 0 1 .4 1 .9L51.5 39c-.1.5-.5.9-1 .9H47"/>
-              <path class="body-stroke" d="M48 23h4.5c.6 0 1 .4 1 .9L51.5 39c-.1.5-.5.9-1 .9H47" stroke-width="1.3"/>
-              <!-- shorts -->
-              <rect class="shorts-fill" x="9" y="44" width="38" height="12" rx="2"/>
-              <!-- left leg -->
-              <path class="body-fill" d="M14 56v13c0 1.2.6 2.2 1.8 2.2h6.4c1.2 0 1.8-1 1.8-2.2V56H14z"/>
-              <path class="body-stroke" d="M14 56v13c0 1.2.6 2.2 1.8 2.2h6.4c1.2 0 1.8-1 1.8-2.2V56" stroke-width="1.3"/>
-              <!-- right leg -->
-              <path class="body-fill" d="M32 56v13c0 1.2.6 2.2 1.8 2.2h6.4c1.2 0 1.8-1 1.8-2.2V56H32z"/>
-              <path class="body-stroke" d="M32 56v13c0 1.2.6 2.2 1.8 2.2h6.4c1.2 0 1.8-1 1.8-2.2V56" stroke-width="1.3"/>
-              <!-- shoes -->
-              <rect class="shorts-fill" x="13" y="69.5" width="12" height="4.5" rx="2"/>
-              <rect class="shorts-fill" x="31" y="69.5" width="12" height="4.5" rx="2"/>
-            </svg>
-          </div>
-          <span class="bt-label">ガチムチ</span>
-        </div>
-
-        <!-- ⑤ ぽっちゃり — 最も大きい丸い体・お腹が突出・太い脚 (selected) -->
-        <div class="bodytype-card selected">
-          <div class="bt-icon">
-            <svg width="56" height="78" viewBox="0 0 56 78" fill="none">
-              <!-- head -->
-              <circle class="head-stroke" cx="28" cy="7.5" r="5.8" stroke-width="1.4"/>
-              <!-- torso - very round belly, widest body -->
-              <path class="body-fill" d="M7 24c0-5 6-8 21-8s21 3 21 8v4c1 3 2.5 7 2.5 11s-1.5 6-4 6H8.5c-2.5 0-4-2-4-6S6 28 7 24v0z"/>
-              <path class="body-stroke" d="M7 24c0-5 6-8 21-8s21 3 21 8v4c1 3 2.5 7 2.5 11s-1.5 6-4 6H8.5c-2.5 0-4-2-4-6S6 28 7 24v0z" stroke-width="1.3"/>
-              <!-- arms -->
-              <path class="body-fill" d="M7 26H3c-.5 0-.9.4-.8.9L4 39c.1.5.4.9.9.9H9"/>
-              <path class="body-stroke" d="M7 26H3c-.5 0-.9.4-.8.9L4 39c.1.5.4.9.9.9H9" stroke-width="1.3"/>
-              <path class="body-fill" d="M49 26h4c.5 0 .9.4.8.9L52 39c-.1.5-.4.9-.9.9H47"/>
-              <path class="body-stroke" d="M49 26h4c.5 0 .9.4.8.9L52 39c-.1.5-.4.9-.9.9H47" stroke-width="1.3"/>
-              <!-- shorts -->
-              <rect class="shorts-fill" x="7" y="46" width="42" height="12" rx="2"/>
-              <!-- left leg - thick -->
-              <path class="body-fill" d="M13 58v11c0 1.2.7 2.2 2 2.2h7c1.3 0 2-1 2-2.2V58H13z"/>
-              <path class="body-stroke" d="M13 58v11c0 1.2.7 2.2 2 2.2h7c1.3 0 2-1 2-2.2V58" stroke-width="1.3"/>
-              <!-- right leg - thick -->
-              <path class="body-fill" d="M32 58v11c0 1.2.7 2.2 2 2.2h7c1.3 0 2-1 2-2.2V58H32z"/>
-              <path class="body-stroke" d="M32 58v11c0 1.2.7 2.2 2 2.2h7c1.3 0 2-1 2-2.2V58" stroke-width="1.3"/>
-              <!-- shoes -->
-              <rect class="shorts-fill" x="12" y="69.5" width="13" height="4.5" rx="2"/>
-              <rect class="shorts-fill" x="31" y="69.5" width="13" height="4.5" rx="2"/>
-            </svg>
-          </div>
+          <div class="bt-icon"><img src="img/bodytype_chubby.png" alt="ぽっちゃり"></div>
           <span class="bt-label">ぽっちゃり</span>
         </div>
 
-        <!-- ② アスリート — 広い肩・V字ウエスト・胸筋と腹筋の線 -->
         <div class="bodytype-card">
-          <div class="bt-icon">
-            <svg width="56" height="78" viewBox="0 0 56 78" fill="none">
-              <!-- head -->
-              <circle class="head-stroke" cx="28" cy="7.5" r="5.8" stroke-width="1.4"/>
-              <!-- torso - V-shape, wide shoulders tapering to waist -->
-              <path class="body-fill" d="M9 23c0-5 7-9 19-9s19 4 19 9v8c0 0-1 5-3 8-1 2-1 3-1 4H13c0-1 0-2-1-4-2-3-3-8-3-8v-8z"/>
-              <path class="body-stroke" d="M9 23c0-5 7-9 19-9s19 4 19 9v8c0 0-1 5-3 8-1 2-1 3-1 4H13c0-1 0-2-1-4-2-3-3-8-3-8v-8z" stroke-width="1.3"/>
-              <!-- chest/ab lines -->
-              <line class="body-stroke" x1="28" y1="22" x2="28" y2="40" stroke-width="0.7"/>
-              <path class="body-stroke" d="M21 27c2-1.5 5-2.5 7-2.5s5 1 7 2.5" stroke-width="0.7"/>
-              <line class="body-stroke" x1="22" y1="32" x2="34" y2="32" stroke-width="0.6"/>
-              <line class="body-stroke" x1="23" y1="36" x2="33" y2="36" stroke-width="0.6"/>
-              <!-- arms -->
-              <path class="body-fill" d="M9 23H4.5c-.5 0-1 .4-1 .9L5.5 38c.1.5.5.9 1 .9H10"/>
-              <path class="body-stroke" d="M9 23H4.5c-.5 0-1 .4-1 .9L5.5 38c.1.5.5.9 1 .9H10" stroke-width="1.3"/>
-              <path class="body-fill" d="M47 23h4.5c.5 0 1 .4 1 .9L50.5 38c-.1.5-.5.9-1 .9H46"/>
-              <path class="body-stroke" d="M47 23h4.5c.5 0 1 .4 1 .9L50.5 38c-.1.5-.5.9-1 .9H46" stroke-width="1.3"/>
-              <!-- shorts -->
-              <rect class="shorts-fill" x="12" y="43" width="32" height="12" rx="2"/>
-              <!-- left leg -->
-              <path class="body-fill" d="M16 55v14c0 1.2.5 2 1.5 2h5c1 0 1.5-.8 1.5-2V55H16z"/>
-              <path class="body-stroke" d="M16 55v14c0 1.2.5 2 1.5 2h5c1 0 1.5-.8 1.5-2V55" stroke-width="1.3"/>
-              <!-- right leg -->
-              <path class="body-fill" d="M32 55v14c0 1.2.5 2 1.5 2h5c1 0 1.5-.8 1.5-2V55H32z"/>
-              <path class="body-stroke" d="M32 55v14c0 1.2.5 2 1.5 2h5c1 0 1.5-.8 1.5-2V55" stroke-width="1.3"/>
-              <!-- shoes -->
-              <rect class="shorts-fill" x="15" y="69.5" width="10" height="4.5" rx="2"/>
-              <rect class="shorts-fill" x="31" y="69.5" width="10" height="4.5" rx="2"/>
-            </svg>
-          </div>
+          <div class="bt-icon"><img src="img/bodytype_stocky.png" alt="ガチムチ"></div>
+          <span class="bt-label">ガチムチ</span>
+        </div>
+
+        <div class="bodytype-card">
+          <div class="bt-icon"><img src="img/bodytype_athletic.png" alt="アスリート"></div>
           <span class="bt-label">アスリート</span>
         </div>
 
-        <!-- ③ 普通体型 — 中間的な肩幅・特徴のない標準体型 -->
-        <div class="bodytype-card">
-          <div class="bt-icon">
-            <svg width="56" height="78" viewBox="0 0 56 78" fill="none">
-              <!-- head -->
-              <circle class="head-stroke" cx="28" cy="7.5" r="5.8" stroke-width="1.4"/>
-              <!-- torso - average, straight, modest width -->
-              <path class="body-fill" d="M13 23c0-4.5 5.5-8 15-8s15 3.5 15 8v18c0 2-1 3-2.5 3h-25c-1.5 0-2.5-1-2.5-3V23z"/>
-              <path class="body-stroke" d="M13 23c0-4.5 5.5-8 15-8s15 3.5 15 8v18c0 2-1 3-2.5 3h-25c-1.5 0-2.5-1-2.5-3V23z" stroke-width="1.3"/>
-              <!-- arms -->
-              <path class="body-fill" d="M13 23H8.5c-.5 0-.8.3-.8.8l1.5 12c.1.5.4.8.8.8H13"/>
-              <path class="body-stroke" d="M13 23H8.5c-.5 0-.8.3-.8.8l1.5 12c.1.5.4.8.8.8H13" stroke-width="1.3"/>
-              <path class="body-fill" d="M43 23h4.5c.5 0 .8.3.8.8l-1.5 12c-.1.5-.4.8-.8.8H43"/>
-              <path class="body-stroke" d="M43 23h4.5c.5 0 .8.3.8.8l-1.5 12c-.1.5-.4.8-.8.8H43" stroke-width="1.3"/>
-              <!-- shorts -->
-              <rect class="shorts-fill" x="14" y="43" width="28" height="12" rx="2"/>
-              <!-- left leg -->
-              <path class="body-fill" d="M18 55v14c0 1 .5 2 1.5 2h4c1 0 1.5-1 1.5-2V55H18z"/>
-              <path class="body-stroke" d="M18 55v14c0 1 .5 2 1.5 2h4c1 0 1.5-1 1.5-2V55" stroke-width="1.3"/>
-              <!-- right leg -->
-              <path class="body-fill" d="M31 55v14c0 1 .5 2 1.5 2h4c1 0 1.5-1 1.5-2V55H31z"/>
-              <path class="body-stroke" d="M31 55v14c0 1 .5 2 1.5 2h4c1 0 1.5-1 1.5-2V55" stroke-width="1.3"/>
-              <!-- shoes -->
-              <rect class="shorts-fill" x="17" y="69.5" width="9" height="4.5" rx="2"/>
-              <rect class="shorts-fill" x="30" y="69.5" width="9" height="4.5" rx="2"/>
-            </svg>
-          </div>
+        <div class="bodytype-card selected">
+          <div class="bt-icon"><img src="img/bodytype_average.png" alt="普通体型"></div>
           <span class="bt-label">普通体型</span>
         </div>
 
-        <!-- ⑥ スリム — 狭い肩・細い胴・長く細い手足 -->
         <div class="bodytype-card">
-          <div class="bt-icon">
-            <svg width="56" height="78" viewBox="0 0 56 78" fill="none">
-              <!-- head -->
-              <circle class="head-stroke" cx="28" cy="7.5" r="5.8" stroke-width="1.4"/>
-              <!-- torso - narrow, slim -->
-              <path class="body-fill" d="M17 23c0-4 4.5-7 11-7s11 3 11 7v19c0 1.5-1 2.5-2 2.5H19c-1 0-2-1-2-2.5V23z"/>
-              <path class="body-stroke" d="M17 23c0-4 4.5-7 11-7s11 3 11 7v19c0 1.5-1 2.5-2 2.5H19c-1 0-2-1-2-2.5V23z" stroke-width="1.3"/>
-              <!-- arms - thin -->
-              <path class="body-fill" d="M17 23h-3.5c-.4 0-.7.3-.7.7l1 12c0 .4.3.7.7.7H17"/>
-              <path class="body-stroke" d="M17 23h-3.5c-.4 0-.7.3-.7.7l1 12c0 .4.3.7.7.7H17" stroke-width="1.3"/>
-              <path class="body-fill" d="M39 23h3.5c.4 0 .7.3.7.7l-1 12c0 .4-.3.7-.7.7H39"/>
-              <path class="body-stroke" d="M39 23h3.5c.4 0 .7.3.7.7l-1 12c0 .4-.3.7-.7.7H39" stroke-width="1.3"/>
-              <!-- shorts -->
-              <rect class="shorts-fill" x="18" y="43" width="20" height="12" rx="2"/>
-              <!-- left leg - slim -->
-              <path class="body-fill" d="M20 55v14c0 1 .5 2 1.2 2h3.6c.7 0 1.2-1 1.2-2V55H20z"/>
-              <path class="body-stroke" d="M20 55v14c0 1 .5 2 1.2 2h3.6c.7 0 1.2-1 1.2-2V55" stroke-width="1.3"/>
-              <!-- right leg - slim -->
-              <path class="body-fill" d="M30 55v14c0 1 .5 2 1.2 2h3.6c.7 0 1.2-1 1.2-2V55H30z"/>
-              <path class="body-stroke" d="M30 55v14c0 1 .5 2 1.2 2h3.6c.7 0 1.2-1 1.2-2V55" stroke-width="1.3"/>
-              <!-- shoes -->
-              <rect class="shorts-fill" x="19" y="69.5" width="8" height="4.5" rx="2"/>
-              <rect class="shorts-fill" x="29" y="69.5" width="8" height="4.5" rx="2"/>
-            </svg>
-          </div>
+          <div class="bt-icon"><img src="img/bodytype_slim.png" alt="スリム"></div>
           <span class="bt-label">スリム</span>
         </div>
 
       </div>
       <div style="margin-top:var(--space-md);font-size:var(--text-xs);color:var(--neutral-600);line-height:1.9;">
-        ※ 選択は1つ。選択中カード: green-600背景＋白アイコン<br>
-        ※ シルエット: 薄いグレー塗り（neutral-200）＋グレー線（neutral-400）＋ダークショーツ（neutral-500）<br>
-        ※ カードサイズ: min-height 130px。タッチターゲット44px以上を確保
+        ※ 選択は1つ。選択中カード: green-600背景＋イラスト白反転（CSS filter: brightness(0) invert(1)）<br>
+        ※ 画像パス: <code style="background:var(--neutral-100);padding:1px 4px;border-radius:3px;font-size:10px;">img/bodytype_[type].png</code><br>
+        ※ 推奨画像サイズ: 幅80px × 高さ110px（@2xの場合 160×220px）、背景透過PNG
       </div>
     </div>
 
@@ -2302,3 +2746,33 @@ section { margin-bottom: var(--space-3xl); }
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
